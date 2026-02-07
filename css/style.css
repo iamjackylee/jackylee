@@ -955,7 +955,286 @@ p {
   pointer-events: none;
 }
 
-/* --- Testimonials --- */
+/* --- Logo in Header --- */
+.header__logo-img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* --- Role Cards --- */
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.role-card {
+  padding: var(--spacing-2xl);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+}
+
+.role-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+.role-card__icon {
+  width: 48px;
+  height: 48px;
+  background: var(--color-accent-subtle);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-accent);
+}
+
+.role-card__title {
+  font-size: 1.15rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.role-card__list {
+  list-style: none;
+  padding: 0;
+}
+
+.role-card__list li {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid var(--color-border);
+  line-height: 1.6;
+}
+
+.role-card__list li:last-child {
+  border-bottom: none;
+}
+
+/* --- Awards --- */
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.awards-group {
+  padding: var(--spacing-2xl);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.awards-group__title {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.awards-group__icon {
+  font-size: 1.5rem;
+}
+
+.awards-group__list {
+  list-style: none;
+  padding: 0;
+}
+
+.awards-group__list li {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+  line-height: 1.5;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--spacing-sm);
+}
+
+.awards-group__list li:last-child {
+  border-bottom: none;
+}
+
+.awards-year {
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* --- Parallax Section (Stats & Glimpse) --- */
+.parallax-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-section__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.parallax-section__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.parallax-section__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.85);
+  z-index: 1;
+}
+
+.parallax-section__content {
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Glimpse Grid --- */
+.glimpse-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.glimpse-card {
+  padding: var(--spacing-2xl);
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+}
+
+.glimpse-card__title {
+  font-size: 1.15rem;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-accent);
+}
+
+.glimpse-card__list {
+  list-style: none;
+  padding: 0;
+}
+
+.glimpse-card__list li {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  line-height: 1.6;
+}
+
+.glimpse-card__list li:last-child {
+  border-bottom: none;
+}
+
+/* --- Spotlight Grid --- */
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.spotlight-item {
+  padding: var(--spacing-lg);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.spotlight-item:hover {
+  border-color: var(--color-accent);
+  color: var(--color-white);
+  background: var(--color-bg-hover);
+}
+
+/* --- Testimonials Grid --- */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.testimonial-card {
+  padding: var(--spacing-2xl);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all var(--transition-base);
+}
+
+.testimonial-card:hover {
+  border-color: var(--color-border-light);
+  box-shadow: var(--shadow-md);
+}
+
+.testimonial-card__quote {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--color-text);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+  padding-top: var(--spacing-lg);
+}
+
+.testimonial-card__quote::before {
+  content: '\201C';
+  font-size: 3rem;
+  color: var(--color-accent);
+  position: absolute;
+  top: -0.5rem;
+  left: 0;
+  opacity: 0.4;
+  font-family: var(--font-heading);
+}
+
+.testimonial-card__author {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.testimonial-card__avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 2px solid var(--color-accent);
+  flex-shrink: 0;
+}
+
+.testimonial-card__name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.testimonial-card__title {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* Legacy single testimonial */
 .testimonial {
   text-align: center;
   max-width: 700px;
@@ -987,6 +1266,98 @@ p {
   font-size: 0.9rem;
   color: var(--color-accent);
   font-weight: 500;
+}
+
+/* --- ART Philosophy --- */
+.art-philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.art-philosophy-card {
+  padding: var(--spacing-2xl);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.art-philosophy-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+.art-philosophy-card__icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto var(--spacing-lg);
+  background: var(--color-accent-subtle);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.art-philosophy-card__title {
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.art-philosophy-card__text {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* --- Partners Grid --- */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.partner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-lg);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  transition: all var(--transition-base);
+  gap: var(--spacing-sm);
+}
+
+.partner-card:hover {
+  border-color: var(--color-border-light);
+  background: var(--color-bg-hover);
+  transform: translateY(-2px);
+}
+
+.partner-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+}
+
+.partner-card__name {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.3;
+}
+
+/* --- Footer Business --- */
+.footer__business {
+  font-size: 0.8rem;
+  margin-top: var(--spacing-sm);
 }
 
 /* --- Footer --- */
@@ -1530,6 +1901,34 @@ p {
   .stats {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .roles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .glimpse-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .art-philosophy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .spotlight-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1548,6 +1947,18 @@ p {
 
   .stats {
     grid-template-columns: 1fr;
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .spotlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat__number {
+    font-size: 2rem;
   }
 }
 

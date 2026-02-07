@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Jacky Lee - Distinguished visual artist and seasoned photographer from Hong Kong. Specializing in landscape, nightscape, architectural, black and white, and aerial drone photography.">
+  <meta name="description" content="Explore Jacky Lee's artistry: curated galleries, exclusive prints, photography tutorials, and immersive tours. Connect for mentoring and updates.">
   <meta name="author" content="Jacky Lee">
-  <meta name="keywords" content="Jacky Lee, photography, Hong Kong, landscape, nightscape, architectural, aerial drone, fine art prints">
-  <meta property="og:title" content="Jacky Lee | Visual Maestro">
-  <meta property="og:description" content="Explore the curated galleries and exclusive prints of award-winning photographer Jacky Lee.">
+  <meta name="keywords" content="Jacky Lee, photography, Hong Kong, Australia, landscape, nightscape, architectural, aerial drone, fine art prints, visual artist, educator">
+  <meta property="og:title" content="Visual Maestro - Jacky Lee The Artist">
+  <meta property="og:description" content="Explore Jacky Lee's artistry: curated galleries, exclusive prints, photography tutorials, and immersive tours. Connect for mentoring and updates.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="images/hero/og-image.png">
   <meta name="theme-color" content="#0a0a0a">
-  <title>Jacky Lee | Visual Maestro</title>
+  <title>Visual Maestro - Jacky Lee The Artist</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,23 +27,31 @@
   <header class="header" role="banner">
     <div class="header__inner">
       <a href="index.html" class="header__logo">
-        Jacky <span class="header__logo-accent">Lee</span>
+        <img src="images/logo/jackylee-logo.png" alt="Jacky Lee" class="header__logo-img">
       </a>
 
       <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__link nav__link--active">Home</a>
         <div class="nav__dropdown">
-          <a href="#galleries" class="nav__link nav__dropdown-toggle">Galleries</a>
+          <a href="gallery.html" class="nav__link nav__dropdown-toggle">Gallery</a>
           <div class="nav__dropdown-menu">
-            <a href="galleries/golden-hours.html" class="nav__dropdown-item">Golden Hours</a>
-            <a href="galleries/monochrome-magic.html" class="nav__dropdown-item">Monochrome Magic</a>
-            <a href="galleries/natures-tapestry.html" class="nav__dropdown-item">Nature's Tapestry</a>
-            <a href="galleries/skyward-visions.html" class="nav__dropdown-item">Skyward Visions</a>
+            <a href="monochrome-magic.html" class="nav__dropdown-item">Monochrome Magic</a>
+            <a href="golden-hours.html" class="nav__dropdown-item">Golden Hours</a>
+            <a href="nature-unveiled.html" class="nav__dropdown-item">Nature Unveiled</a>
+            <a href="skyward-visions.html" class="nav__dropdown-item">Skyward Visions</a>
           </div>
         </div>
-        <a href="services.html" class="nav__link">Services</a>
-        <a href="publications.html" class="nav__link">Publications</a>
-        <a href="recognition.html" class="nav__link">Recognition</a>
         <a href="exhibition.html" class="nav__link">Exhibition</a>
+        <a href="recognition.html" class="nav__link">Recognition</a>
+        <div class="nav__dropdown">
+          <a href="services.html" class="nav__link nav__dropdown-toggle">Services</a>
+          <div class="nav__dropdown-menu">
+            <a href="travel-companion.html" class="nav__dropdown-item">Travel Companion</a>
+            <a href="book-publications.html" class="nav__dropdown-item">Book Publications</a>
+            <a href="mindful-photography.html" class="nav__dropdown-item">Mindful Photography</a>
+            <a href="website-design.html" class="nav__dropdown-item">Website Design</a>
+          </div>
+        </div>
         <a href="contact.html" class="nav__link">Contact</a>
       </nav>
 
@@ -60,13 +69,13 @@
   <!-- ======== Hero Section ======== -->
   <section class="hero" id="home">
     <div class="hero__bg">
-      <img src="https://images.unsplash.com/photo-1500534314263-a845f593db23?w=1920&q=80" alt="Dramatic landscape photography by Jacky Lee" loading="eager">
+      <img src="images/hero/hero-bg.jpg" alt="Photography by Jacky Lee" loading="eager">
     </div>
     <div class="hero__overlay"></div>
     <div class="hero__content">
-      <span class="subtitle animate-in">Award-Winning Photographer</span>
-      <h1 class="hero__title animate-in animate-in--delay-1">Visual <span class="text-gradient">Maestro</span></h1>
-      <p class="hero__subtitle animate-in animate-in--delay-2">Explore curated galleries showcasing over two decades of photographic mastery, from sweeping landscapes to intimate architectural studies. Discover exclusive fine art prints.</p>
+      <span class="subtitle animate-in">Visual Artist &amp; Educator</span>
+      <h1 class="hero__title animate-in animate-in--delay-1">Jacky <span class="text-gradient">Lee</span></h1>
+      <p class="hero__subtitle animate-in animate-in--delay-2">Connecting Cultures Through Photography, Community and Digital Ethics</p>
       <div class="hero__cta animate-in animate-in--delay-3">
         <a href="#galleries" class="btn btn--primary btn--lg">Explore Galleries <span class="btn__arrow">&rarr;</span></a>
         <a href="services.html" class="btn btn--outline btn--lg">View Services</a>
@@ -82,30 +91,631 @@
           <span class="subtitle">About the Artist</span>
           <h2>Jacky Lee</h2>
           <div class="divider"></div>
-          <p class="lead">A distinguished visual artist and seasoned photographer hailing from Hong Kong, Jacky Lee brings over two decades of experience to every frame he captures.</p>
-          <p>A self-taught artist with a distinctive style, Jacky specializes in landscape, nightscape, architectural, black and white, and aerial drone photography. His work has earned international acclaim, including the prestigious National Geographic Photo Contest Winner title in 2017.</p>
-          <p>Beyond the lens, Jacky is a Chartered Building Engineer and Chartered Building Surveyor (RICS, CABE). He serves as a photography advisor at the Hong Kong Biodiversity Museum and as a course tutor at HKU, nurturing the next generation of visual storytellers.</p>
-          <a href="about.html" class="btn btn--ghost mt-2">Read Full Biography <span class="btn__arrow">&rarr;</span></a>
+          <p class="lead">Jacky Lee is a distinguished visual artist, educator and award-winning photographer whose work bridges art, culture and technology. With over two decades of experience, his images explore the quiet poetry of landscapes, the geometry of architecture and the human stories that lie between nature and the built environment.</p>
+          <p>Born in Hong Kong and now based in Australia, Jacky developed a lifelong fascination with light, space and community. Entirely self-taught, he has shaped a visual language marked by thoughtful composition, atmospheric sensitivity and a deep respect for the places and people he photographs.</p>
+          <p>Working across landscape, nightscape, architectural, black-and-white and aerial photography, Jacky combines artistic intention with technical mastery, drawing on his accreditation as a commercial drone pilot to capture perspectives that reveal both the beauty and fragility of our shared world.</p>
+          <p>Beyond his artistic practice, Jacky is dedicated to using photography and digital literacy to connect cultures, empower young people and foster responsible image-making in an era transformed by artificial intelligence.</p>
+          <a href="recognition.html" class="btn btn--ghost mt-2">View Recognition <span class="btn__arrow">&rarr;</span></a>
         </div>
         <div class="split__image">
-          <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=800&q=80" alt="Jacky Lee - photographer portrait" loading="lazy">
+          <img src="images/hero/og-image.png" alt="Jacky Lee - Visual Artist and Photographer" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Hero Roles Section ======== -->
+  <section class="section section--alt" id="roles">
+    <div class="container">
+      <div class="text-center mb-4 animate-in">
+        <span class="subtitle">Professional Profile</span>
+        <h2>Roles &amp; <span class="text-gradient">Credentials</span></h2>
+      </div>
+
+      <div class="roles-grid">
+        <!-- Award-Winning Photographer -->
+        <div class="role-card animate-in animate-in--delay-1">
+          <div class="role-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+          </div>
+          <h3 class="role-card__title">Award-Winning Photographer</h3>
+          <ul class="role-card__list">
+            <li>National Geographic Youth Photo Contest &mdash; Champion</li>
+            <li>Epson International Pano Awards &mdash; Silver</li>
+          </ul>
+        </div>
+
+        <!-- National & International Roles -->
+        <div class="role-card animate-in animate-in--delay-2">
+          <div class="role-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </div>
+          <h3 class="role-card__title">National &amp; International Roles</h3>
+          <ul class="role-card__list">
+            <li>APJA &mdash; Management Committee Member</li>
+            <li>APS &mdash; Chair, AI &amp; Authorship Standards Subcommittee; Management Committee Member</li>
+            <li>CAPA &mdash; AI Advisory Committee Member</li>
+            <li>IAAP &mdash; Ambassador</li>
+            <li>IAPP &mdash; Board of Directors</li>
+            <li>RPS &mdash; AI Working Group Member; Australian Chapter Honorary Secretary; International Team Content Manager; Landscape Group Web Editor</li>
+          </ul>
+        </div>
+
+        <!-- Judging & Mentoring Roles -->
+        <div class="role-card animate-in animate-in--delay-3">
+          <div class="role-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <h3 class="role-card__title">Judging &amp; Mentoring</h3>
+          <ul class="role-card__list">
+            <li>APJA; PSA; VAPS &mdash; Qualified Judge</li>
+            <li>CCL; HKBM; HKIS; HKTraveler; WYK &mdash; Advisor</li>
+            <li>Chinachem; MPA; MCS; Viewbug &mdash; Photo Judge</li>
+            <li>HKCT; HKU &mdash; Guest Speaker</li>
+            <li>PSA; RPS Australia Chapter &mdash; Photo Mentor</li>
+          </ul>
+        </div>
+
+        <!-- Leadership Roles -->
+        <div class="role-card animate-in animate-in--delay-4">
+          <div class="role-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <h3 class="role-card__title">Leadership Roles</h3>
+          <ul class="role-card__list">
+            <li>Canberra Drone Building Inspections &amp; Consultancy &mdash; CEO</li>
+            <li>Jacky Lee Visionary Creations &mdash; Director</li>
+            <li>Photography Society of Hongkongers in Australia &mdash; Founder</li>
+            <li>Physiognomy.ai &mdash; Managing Director</li>
+            <li>TheDayAfterAI News &mdash; Art Director</li>
+          </ul>
+        </div>
+
+        <!-- Professional Credentials -->
+        <div class="role-card animate-in">
+          <div class="role-card__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          </div>
+          <h3 class="role-card__title">Professional Credentials</h3>
+          <ul class="role-card__list">
+            <li>ASCE; HKIS; IET; NSPE &mdash; Professional Member</li>
+            <li>CABE &mdash; Chartered Building Engineer</li>
+            <li>CASA &mdash; Accredited Commercial Drone Pilot</li>
+            <li>RICS &mdash; Chartered Surveyor</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Awards Section ======== -->
+  <section class="section" id="awards">
+    <div class="container">
+      <div class="text-center mb-4 animate-in">
+        <span class="subtitle">Recognition</span>
+        <h2>Award-Winning <span class="text-gradient">Photographer</span></h2>
+      </div>
+
+      <div class="awards-grid">
+        <!-- Champion -->
+        <div class="awards-group animate-in">
+          <h3 class="awards-group__title">
+            <span class="awards-group__icon">&#127942;</span>
+            Champion
+          </h3>
+          <ul class="awards-group__list">
+            <li>Gurushot Photographer of the Year <span class="awards-year">2022</span></li>
+            <li>Gurushot Black &amp; White Photographer of the Year <span class="awards-year">2022</span></li>
+            <li>Mobile Phone Photography International World's Top Photo Award <span class="awards-year">2022</span></li>
+            <li>National Geographic Youth Photo Contest <span class="awards-year">2017</span></li>
+            <li>TOP TEN Outstanding Photography Masters <span class="awards-year">2012</span></li>
+            <li>Rehabilitation and Reoccurrence Photo Competition <span class="awards-year">2007</span></li>
+            <li>Unforgettable History Photo Competition <span class="awards-year">2007</span></li>
+            <li>Every District is Worth Seeing Freestyle Digital Photo Competition <span class="awards-year">2004</span></li>
+          </ul>
+        </div>
+
+        <!-- First Runner-up -->
+        <div class="awards-group animate-in animate-in--delay-1">
+          <h3 class="awards-group__title">
+            <span class="awards-group__icon">&#129352;</span>
+            First Runner-up
+          </h3>
+          <ul class="awards-group__list">
+            <li>Epson International Pano Awards &mdash; Silver Award <span class="awards-year">2023</span></li>
+            <li>Halloween Portrait Photo Contest <span class="awards-year">2009</span></li>
+            <li>Working Together for a Better Ngau Tau Kok Photo Contest <span class="awards-year">2009</span></li>
+          </ul>
+        </div>
+
+        <!-- Second Runner-up -->
+        <div class="awards-group animate-in animate-in--delay-2">
+          <h3 class="awards-group__title">
+            <span class="awards-group__icon">&#129353;</span>
+            Second Runner-up
+          </h3>
+          <ul class="awards-group__list">
+            <li>Tokyo International Foto Awards <span class="awards-year">2024</span></li>
+            <li>Built Over The Century Photo Marathon <span class="awards-year">2021</span></li>
+          </ul>
+        </div>
+
+        <!-- Finalist -->
+        <div class="awards-group animate-in animate-in--delay-3">
+          <h3 class="awards-group__title">
+            <span class="awards-group__icon">&#11088;</span>
+            Finalist / Honourable Mentions
+          </h3>
+          <ul class="awards-group__list">
+            <li>Monochrome Photography Awards (Professional Architecture) <span class="awards-year">2025</span></li>
+            <li>Monovisions Awards (Architectural Series) <span class="awards-year">2024</span></li>
+            <li>Budapest International Foto Awards (Interior Architecture) <span class="awards-year">2023</span></li>
+            <li>International Photography Awards (Building Architecture) <span class="awards-year">2023</span></li>
+            <li>Paris Photography Prize (Bridge Architecture) <span class="awards-year">2023</span></li>
+            <li>Annual Photography Awards (Mobile Photography) <span class="awards-year">2022</span></li>
+            <li>Annual Photography Awards (Natural Landscape) <span class="awards-year">2022</span></li>
+            <li>International Black &amp; White Photography Contest <span class="awards-year">2022</span></li>
+            <li>National Geographic Hong Kong Photo Contest <span class="awards-year">2020</span></li>
+            <li>National Geographic Hong Kong Photo Contest <span class="awards-year">2018</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-3 animate-in">
+        <a href="recognition.html" class="btn btn--outline">View Full Recognition <span class="btn__arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Exhibitions Section ======== -->
+  <section class="section section--alt" id="exhibitions">
+    <div class="container">
+      <div class="split animate-in">
+        <div class="split__content">
+          <span class="subtitle">Global Exhibitions</span>
+          <h2>Exhibited <span class="text-gradient">Worldwide</span></h2>
+          <div class="divider"></div>
+          <p class="lead">Jacky's award-winning photographs have been exhibited worldwide, with showcases across Australia, Canada, Colombia, Cyprus, Germany, Greece, Hong Kong, Hungary, Italy, Mexico, the Philippines, South Africa, Spain, Sweden, Thailand, the UK, the USA and Vietnam.</p>
+          <p>His major projects include <strong>Abstract Skyscape</strong>, <strong>Aerial Hong Kong</strong>, <strong>Colours of Australia</strong>, <strong>Secret Parts of Hong Kong</strong>, and <strong>The Beauty of North-West New Territories</strong>. Jacky also contributed to the <strong>Mui Tsz Lam Art Revitalization Project</strong>, highlighting his versatility and creative engagement in cultural and community-based initiatives.</p>
+          <a href="exhibition.html" class="btn btn--ghost mt-2">View Exhibitions <span class="btn__arrow">&rarr;</span></a>
+        </div>
+        <div class="split__image">
+          <img src="images/sections/glimpse-of-success-bg.jpg" alt="Jacky Lee photography exhibition" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== A Glimpse of Success Section ======== -->
+  <section class="section parallax-section" id="glimpse">
+    <div class="parallax-section__bg">
+      <img src="images/sections/glimpse-of-success-bg.jpg" alt="" loading="lazy" aria-hidden="true">
+    </div>
+    <div class="parallax-section__overlay"></div>
+    <div class="container parallax-section__content">
+      <div class="text-center mb-4 animate-in">
+        <span class="subtitle">A Glimpse of Success</span>
+        <h2>Judging, Mentoring &amp; <span class="text-gradient">Public Speaking</span></h2>
+      </div>
+
+      <div class="glimpse-grid">
+        <!-- Judging & Mentoring -->
+        <div class="glimpse-card animate-in">
+          <h3 class="glimpse-card__title">Judging &amp; Mentoring</h3>
+          <ul class="glimpse-card__list">
+            <li>Photographic Society of America Education Star Silver Award 2025</li>
+            <li>Panel Judge, Mobile Photography Awards 2025</li>
+            <li>Master Judge, Viewbug Skyward Visions Photo Contest 2024</li>
+            <li>Panel Judge, Hong Kong Dragonfly &amp; Damselfly Photo Contest 2024</li>
+            <li>Panel Judge, Lai Chi Wo Mui Tze Lam Hakka Culture Photo Competition 2023</li>
+            <li>Panel Judge, Love the Nature Photo Contest 2019</li>
+            <li>Master Judge, Wah Yan College Kowloon Photo Contest 2018</li>
+            <li>Counsellor, Assessment of Professional Competence, HKIS &amp; RICS</li>
+          </ul>
+        </div>
+
+        <!-- Public Speaking -->
+        <div class="glimpse-card animate-in animate-in--delay-1">
+          <h3 class="glimpse-card__title">Public Speaking</h3>
+          <ul class="glimpse-card__list">
+            <li>Photography Workshop Leader, National Meet-up Day, Australian Photographic Society 2025</li>
+            <li>Photography Instructor, Walk in Hong Kong Street Tour 2021</li>
+            <li>Guest Speaker, Chak Yan Centre, Hong Kong 2020</li>
+            <li>Guest Speaker, University of Hong Kong 2019</li>
+            <li>Photography Course Tutor, Hong Kong College of Technology 2005</li>
+          </ul>
+        </div>
+
+        <!-- Honourable Advisor -->
+        <div class="glimpse-card animate-in animate-in--delay-2">
+          <h3 class="glimpse-card__title">Honourable Advisor</h3>
+          <ul class="glimpse-card__list">
+            <li>The Jumping Spider Photo Contest 2023, Hong Kong Biodiversity Museum</li>
+            <li>HKIS Hiking Tour 2021</li>
+            <li>Double Haven Old Village Tour 2020</li>
+            <li>Wah Yan College Kowloon Photography Service Team 2018</li>
+          </ul>
+        </div>
+
+        <!-- Invited Nomination -->
+        <div class="glimpse-card animate-in animate-in--delay-3">
+          <h3 class="glimpse-card__title">Invited Nomination</h3>
+          <ul class="glimpse-card__list">
+            <li>APS Contemporary Photo Exhibition 2023</li>
+            <li>'A Date with Hing Chun Alliance' Exhibition 2023</li>
+            <li>National Geographic Photo Exhibition 2022</li>
+            <li>Team Head, Buildings Department Staff Recreation Club Photo Team 2020</li>
+            <li>Software Reviewer, Topaz AI 2020</li>
+            <li>Mui Tsz Lam Art Revitalization Project 2019</li>
+            <li>Sony RX1 Camera Reviewer 2014</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Community Section ======== -->
+  <section class="section section--alt" id="community">
+    <div class="container">
+      <div class="split split--reverse animate-in">
+        <div class="split__content">
+          <span class="subtitle">Community &amp; Leadership</span>
+          <h2>Beyond the <span class="text-gradient">Lens</span></h2>
+          <div class="divider"></div>
+          <p class="lead">Beyond the lens, Jacky contributes widely to the global photographic community. He serves with the Australian Photographic Society (APS), mentors photographers through both the Photographic Society of America (PSA) and the Royal Photographic Society's (RPS) Australian Chapter, and is the Web Editor of the RPS Landscape Group.</p>
+          <p>Jacky also supports the RPS International Team as Content Manager, sits on the Board of Directors of the International Association of Panoramic Photographers (IAPP), and helps coordinate the Four Nations Inter-Country Photography Competition.</p>
+          <p>Jacky's multidisciplinary background as a Chartered Building Engineer and Chartered Building Surveyor enriches his visual work with architectural insight and technical precision.</p>
+          <p>As an author, educator and speaker, he shares his expertise through books, workshops and guest lectures, including at the University of Hong Kong (HKU). He also contributes as a photography advisor to the Hong Kong Biodiversity Museum and serves as a judge for national and international competitions.</p>
+        </div>
+        <div class="split__image">
+          <img src="images/hero/hero-bg.jpg" alt="Jacky Lee community engagement" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Stats Section ======== -->
+  <section class="section parallax-section" id="stats">
+    <div class="parallax-section__bg">
+      <img src="images/sections/stats-bg.png" alt="" loading="lazy" aria-hidden="true">
+    </div>
+    <div class="parallax-section__overlay"></div>
+    <div class="container parallax-section__content">
+      <div class="stats animate-in">
+        <div class="stat">
+          <div class="stat__number">800k+</div>
+          <div class="stat__label">Blog Views</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">10k+</div>
+          <div class="stat__label">Followers in Social Media</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">200+</div>
+          <div class="stat__label">Photo Sharing Sessions</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">100+</div>
+          <div class="stat__label">Awards &amp; Recognitions</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">30+</div>
+          <div class="stat__label">Global Exhibitions</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">20+</div>
+          <div class="stat__label">Media Coverage</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Artwork in the Spotlight ======== -->
+  <section class="section" id="spotlight">
+    <div class="container">
+      <div class="text-center mb-4 animate-in">
+        <span class="subtitle">Media Features</span>
+        <h2>Artwork in the <span class="text-gradient">Spotlight</span></h2>
+      </div>
+
+      <div class="spotlight-grid animate-in">
+        <div class="spotlight-item">Agriculture, Fisheries and Conservation Department, Hong Kong</div>
+        <div class="spotlight-item">Australian Broadcasting Corporation News</div>
+        <div class="spotlight-item">Blok Design Associates, Brisbane, Australia</div>
+        <div class="spotlight-item">Buildings Department, Hong Kong</div>
+        <div class="spotlight-item">Canberra Photography Group</div>
+        <div class="spotlight-item">Fine Art Photography: A Curated Group</div>
+        <div class="spotlight-item">Hong Kong Dental Association</div>
+        <div class="spotlight-item">Hong Kong Economic Times</div>
+        <div class="spotlight-item">Hong Kong Observatory</div>
+        <div class="spotlight-item">Huon Valley Council, Tasmania, Australia</div>
+        <div class="spotlight-item">Laowa by Venus Optics</div>
+        <div class="spotlight-item">Nature Conservancy Hong Kong</div>
+        <div class="spotlight-item">Sydney Photography Group</div>
+        <div class="spotlight-item">The Independent Photographer</div>
+        <div class="spotlight-item">Waterworks Services Department, Hong Kong</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Testimonials Section ======== -->
+  <section class="section section--alt" id="testimonials">
+    <div class="container">
+      <div class="text-center mb-4 animate-in">
+        <span class="subtitle">Words of Affirmation</span>
+        <h2>What People <span class="text-gradient">Say</span></h2>
+        <p class="lead" style="max-width: 700px; margin: var(--spacing-md) auto 0;">Discover genuine testimonials from collaborators, clients, and peers. Each endorsement provides a unique perspective on Jacky's impact in the world of visual art and photography.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <!-- Dr. Benoit Guenard -->
+        <div class="testimonial-card animate-in">
+          <div class="testimonial-card__quote">&ldquo;Your knowledge and professional acumen have greatly contributed to setting the high standard and the rigorous judging framework that were central to the contest's success.&rdquo;</div>
+          <div class="testimonial-card__author">
+            <img src="images/testimonials/benoit-guenard.png" alt="Dr. Benoit Guenard" class="testimonial-card__avatar" loading="lazy">
+            <div>
+              <div class="testimonial-card__name">Dr. Benoit Guenard</div>
+              <div class="testimonial-card__title">Director, Hong Kong Biodiversity Museum</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charles Lee -->
+        <div class="testimonial-card animate-in animate-in--delay-1">
+          <div class="testimonial-card__quote">&ldquo;The art photo galleries, showcasing the gorgeous natural scenery and city landscape of Hong Kong, was well received by the visitors in the art revitalization project.&rdquo;</div>
+          <div class="testimonial-card__author">
+            <img src="images/testimonials/charles-lee.png" alt="Charles Lee" class="testimonial-card__avatar" loading="lazy">
+            <div>
+              <div class="testimonial-card__name">Charles Lee</div>
+              <div class="testimonial-card__title">Chairperson, Association for Sha Tau Kok Cultural and Ecology</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Elaine Herbert -->
+        <div class="testimonial-card animate-in animate-in--delay-2">
+          <div class="testimonial-card__quote">&ldquo;I must congratulate you, Jacky, on the excellent images on your website. You have some beautiful work there. We're really impressed.&rdquo;</div>
+          <div class="testimonial-card__author">
+            <img src="images/testimonials/elaine-herbert.jpg" alt="Elaine Herbert" class="testimonial-card__avatar" loading="lazy">
+            <div>
+              <div class="testimonial-card__name">Elaine Herbert</div>
+              <div class="testimonial-card__title">Royal Photographic Society President's Medal Recipient 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kay Larkin -->
+        <div class="testimonial-card animate-in">
+          <div class="testimonial-card__quote">&ldquo;Thank you for your enthusiasm to participate in our organization. You are just the kind of member we are looking for. Congratulations on your achievements and honours!&rdquo;</div>
+          <div class="testimonial-card__author">
+            <img src="images/testimonials/kay-larkin.png" alt="Kay Larkin" class="testimonial-card__avatar" loading="lazy">
+            <div>
+              <div class="testimonial-card__name">Kay Larkin</div>
+              <div class="testimonial-card__title">President, International Association of Panoramic Photographers</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. Michael Mui -->
+        <div class="testimonial-card animate-in animate-in--delay-1">
+          <div class="testimonial-card__quote">&ldquo;With your possession of good knowledge and sound experience in drone photography, I firmly believe that the aforementioned topic would be of interest to our members who will find pleasure in reading your sharing.&rdquo;</div>
+          <div class="testimonial-card__author">
+            <img src="images/testimonials/michael-mui.png" alt="Dr. Michael Mui" class="testimonial-card__avatar" loading="lazy">
+            <div>
+              <div class="testimonial-card__name">Dr. Michael Mui</div>
+              <div class="testimonial-card__title">Editor-in-Chief, Newsletter Editorial Board, Hong Kong Dental Association</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Paul Chan -->
+        <div class="testimonial-card animate-in animate-in--delay-2">
+          <div class="testimonial-card__quote">&ldquo;You had been generously sharing your knowledge and time in guiding the public on how to capture the historic sites in Central, Hong Kong from an artistic point of view.&rdquo;</div>
+          <div class="testimonial-card__author">
+            <img src="images/testimonials/paul-chan.png" alt="Paul Chan" class="testimonial-card__avatar" loading="lazy">
+            <div>
+              <div class="testimonial-card__name">Paul Chan</div>
+              <div class="testimonial-card__title">CEO, Walk in Hong Kong</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sanjoy Sengupta -->
+        <div class="testimonial-card animate-in">
+          <div class="testimonial-card__quote">&ldquo;Team PSA is extremely impressed with your profile and would like to welcome you among our distinguished Mentors.&rdquo;</div>
+          <div class="testimonial-card__author">
+            <img src="images/testimonials/sanjoy-sengupta.png" alt="Sanjoy Sengupta" class="testimonial-card__avatar" loading="lazy">
+            <div>
+              <div class="testimonial-card__name">Sanjoy Sengupta</div>
+              <div class="testimonial-card__title">Director, Consultant Services, Photographic Society of America</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sylvia Chung -->
+        <div class="testimonial-card animate-in animate-in--delay-1">
+          <div class="testimonial-card__quote">&ldquo;Your expertise was instrumental in the campaign's resounding success. Your selection of photographs that captured the village's essence not only showcased your artistic talent but also amplified our efforts to promote the conservation of cultural heritage.&rdquo;</div>
+          <div class="testimonial-card__author">
+            <img src="images/testimonials/sylvia-chung.jpg" alt="Sylvia Chung" class="testimonial-card__avatar" loading="lazy">
+            <div>
+              <div class="testimonial-card__name">Sylvia Chung</div>
+              <div class="testimonial-card__title">Chief Business Impact Officer, Chinachem Group</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dr. Y.T. Wong -->
+        <div class="testimonial-card animate-in animate-in--delay-2">
+          <div class="testimonial-card__quote">&ldquo;The seminar was well received by our course students. The information and skills you have shared with them were fascinating and inspirational.&rdquo;</div>
+          <div class="testimonial-card__author">
+            <img src="images/testimonials/yt-wong.png" alt="Dr. Y.T. Wong" class="testimonial-card__avatar" loading="lazy">
+            <div>
+              <div class="testimonial-card__name">Dr. Y.T. Wong</div>
+              <div class="testimonial-card__title">Course Coordinator, School of Chinese, The University of Hong Kong</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== ART Philosophy Section ======== -->
+  <section class="section" id="art-philosophy">
+    <div class="container">
+      <div class="text-center mb-4 animate-in">
+        <span class="subtitle">Philosophy</span>
+        <h2>ART &mdash; Appreciate, Reflect, <span class="text-gradient">Transform</span></h2>
+        <p class="lead" style="max-width: 700px; margin: var(--spacing-md) auto 0;">Jacky's Approach to Creativity, Community and Digital Integrity</p>
+      </div>
+
+      <div class="art-philosophy-grid">
+        <div class="art-philosophy-card animate-in">
+          <div class="art-philosophy-card__icon">A</div>
+          <h3 class="art-philosophy-card__title">Appreciate</h3>
+          <p class="art-philosophy-card__text">For Jacky, art is a way of seeing and a way of living. He promotes photography as a mindful, therapeutic practice that encourages people to slow down, appreciate the everyday and reconnect with their emotional well-being.</p>
+        </div>
+        <div class="art-philosophy-card animate-in animate-in--delay-1">
+          <div class="art-philosophy-card__icon">R</div>
+          <h3 class="art-philosophy-card__title">Reflect</h3>
+          <p class="art-philosophy-card__text">As the Founder of the Photography Society of Hongkongers in Australia (PSHKA), Jacky fosters creativity, cultural exchange and community connection &mdash; bringing Hongkongers together while building bridges with the wider Australian community.</p>
+        </div>
+        <div class="art-philosophy-card animate-in animate-in--delay-2">
+          <div class="art-philosophy-card__icon">T</div>
+          <h3 class="art-philosophy-card__title">Transform</h3>
+          <p class="art-philosophy-card__text">Jacky's work sits at the intersection of art, technology and ethical innovation. He plays an active role in shaping global conversations around AI and visual integrity, serving as Chair of the APS AI &amp; Authorship Standards Sub-Committee, a member of the RPS AI Working Group, and a member of the CAPA AI Advisory Committee. As a member of Adobe's Content Authenticity Initiative (CAI), he advocates for transparency, digital literacy and the protection of truth in the age of synthetic imagery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Partnerships & Milestones ======== -->
+  <section class="section section--alt" id="partnerships">
+    <div class="container">
+      <div class="text-center mb-4 animate-in">
+        <span class="subtitle">Collaborations</span>
+        <h2>Partnerships &amp; <span class="text-gradient">Milestones</span></h2>
+      </div>
+
+      <div class="partners-grid">
+        <div class="partner-card animate-in">
+          <img src="images/partners/act-government.png" alt="ACT Government of Australia" loading="lazy">
+          <span class="partner-card__name">ACT Government of Australia</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/afcd-hk.png" alt="Agriculture, Fisheries and Conservation Department of Hong Kong" loading="lazy">
+          <span class="partner-card__name">AFCD Hong Kong</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/sha-tau-kok.png" alt="Association for Sha Tau Kok Cultural and Ecology" loading="lazy">
+          <span class="partner-card__name">Sha Tau Kok Cultural &amp; Ecology</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/aps.jpg" alt="Australian Photographic Society" loading="lazy">
+          <span class="partner-card__name">Australian Photographic Society</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/buildings-dept-hk.jpg" alt="Buildings Department Hong Kong" loading="lazy">
+          <span class="partner-card__name">Buildings Department HK</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/capa.jpg" alt="Canadian Association of Photographic Art" loading="lazy">
+          <span class="partner-card__name">CAPA</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/dcfever.png" alt="DCFever Hong Kong" loading="lazy">
+          <span class="partner-card__name">DCFever Hong Kong</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/floriade.png" alt="Floriade, ACT Government" loading="lazy">
+          <span class="partner-card__name">Floriade</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/hkbm.jpg" alt="Hong Kong Biodiversity Museum" loading="lazy">
+          <span class="partner-card__name">HK Biodiversity Museum</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/hkis.jpg" alt="Hong Kong Institute of Surveyors" loading="lazy">
+          <span class="partner-card__name">HKIS</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/hkda.jpg" alt="Hong Kong Dental Association" loading="lazy">
+          <span class="partner-card__name">HK Dental Association</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/hk-observatory.jpg" alt="Hong Kong Observatory" loading="lazy">
+          <span class="partner-card__name">HK Observatory</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/hk-traveler.png" alt="Hong Kong Traveler" loading="lazy">
+          <span class="partner-card__name">Hong Kong Traveler</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/huon-valley.png" alt="Huon Valley Council, Tasmania" loading="lazy">
+          <span class="partner-card__name">Huon Valley Council</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/iapp.jpg" alt="International Association of Panoramic Photographers" loading="lazy">
+          <span class="partner-card__name">IAPP</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/laowa.png" alt="Laowa, Venus Optics" loading="lazy">
+          <span class="partner-card__name">Laowa</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/national-geographic.jpg" alt="National Geographic" loading="lazy">
+          <span class="partner-card__name">National Geographic</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/mpa.jpg" alt="Mobile Photography Awards" loading="lazy">
+          <span class="partner-card__name">Mobile Photography Awards</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/nature-conservancy-hk.jpg" alt="Nature Conservancy Hong Kong" loading="lazy">
+          <span class="partner-card__name">Nature Conservancy HK</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/psa.jpg" alt="Photographic Society of America" loading="lazy">
+          <span class="partner-card__name">PSA</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/pssa.jpg" alt="Photographic Society of South Africa" loading="lazy">
+          <span class="partner-card__name">PSSA</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/testimonials/elaine-herbert.jpg" alt="Royal Photographic Society" loading="lazy">
+          <span class="partner-card__name">Royal Photographic Society</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/sony-hk.png" alt="Sony Hong Kong" loading="lazy">
+          <span class="partner-card__name">Sony Hong Kong</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/hku.jpg" alt="University of Hong Kong" loading="lazy">
+          <span class="partner-card__name">University of Hong Kong</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/wyk.jpg" alt="Wah Yan College Kowloon" loading="lazy">
+          <span class="partner-card__name">Wah Yan College Kowloon</span>
+        </div>
+        <div class="partner-card animate-in">
+          <img src="images/partners/walk-in-hk.png" alt="Walk in Hong Kong" loading="lazy">
+          <span class="partner-card__name">Walk in Hong Kong</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ======== Featured Galleries Section ======== -->
-  <section class="section section--alt" id="galleries">
+  <section class="section" id="galleries">
     <div class="container">
       <div class="text-center mb-4 animate-in">
         <span class="subtitle">Portfolio</span>
-        <h2>Featured Galleries</h2>
+        <h2>Featured <span class="text-gradient">Galleries</span></h2>
         <p class="lead" style="max-width: 600px; margin: var(--spacing-md) auto 0;">A curated selection of collections spanning landscapes bathed in golden light, stark monochrome studies, the raw beauty of nature, and breathtaking aerial perspectives.</p>
       </div>
 
       <div class="gallery-grid">
-        <!-- Golden Hours -->
-        <a href="galleries/golden-hours.html" class="card animate-in animate-in--delay-1">
+        <a href="golden-hours.html" class="card animate-in animate-in--delay-1">
           <div class="card__image">
             <img src="https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=600&q=80" alt="Golden Hours gallery - warm sunset landscape photography" loading="lazy">
             <div class="card__image-overlay"></div>
@@ -118,8 +728,7 @@
           </div>
         </a>
 
-        <!-- Monochrome Magic -->
-        <a href="galleries/monochrome-magic.html" class="card animate-in animate-in--delay-2">
+        <a href="monochrome-magic.html" class="card animate-in animate-in--delay-2">
           <div class="card__image">
             <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600&q=80" alt="Monochrome Magic gallery - black and white photography" loading="lazy">
             <div class="card__image-overlay"></div>
@@ -132,22 +741,20 @@
           </div>
         </a>
 
-        <!-- Nature's Tapestry -->
-        <a href="galleries/natures-tapestry.html" class="card animate-in animate-in--delay-3">
+        <a href="nature-unveiled.html" class="card animate-in animate-in--delay-3">
           <div class="card__image">
-            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80" alt="Nature's Tapestry gallery - natural landscape photography" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80" alt="Nature Unveiled gallery - natural landscape photography" loading="lazy">
             <div class="card__image-overlay"></div>
           </div>
           <div class="card__body">
             <span class="card__tag">Nature</span>
-            <h3 class="card__title">Nature's Tapestry</h3>
+            <h3 class="card__title">Nature Unveiled</h3>
             <p class="card__text">An intimate exploration of the natural world, weaving together intricate details of flora, fauna, and the untamed wilderness into visual poetry.</p>
             <span class="card__link">View Collection <span class="btn__arrow">&rarr;</span></span>
           </div>
         </a>
 
-        <!-- Skyward Visions -->
-        <a href="galleries/skyward-visions.html" class="card animate-in animate-in--delay-4">
+        <a href="skyward-visions.html" class="card animate-in animate-in--delay-4">
           <div class="card__image">
             <img src="https://images.unsplash.com/photo-1488229297570-58520851e868?w=600&q=80" alt="Skyward Visions gallery - aerial drone photography" loading="lazy">
             <div class="card__image-overlay"></div>
@@ -159,30 +766,6 @@
             <span class="card__link">View Collection <span class="btn__arrow">&rarr;</span></span>
           </div>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======== Stats Section ======== -->
-  <section class="section" id="stats">
-    <div class="container">
-      <div class="stats animate-in">
-        <div class="stat">
-          <div class="stat__number">20+</div>
-          <div class="stat__label">Years Experience</div>
-        </div>
-        <div class="stat">
-          <div class="stat__number">50+</div>
-          <div class="stat__label">International Awards</div>
-        </div>
-        <div class="stat">
-          <div class="stat__number">18+</div>
-          <div class="stat__label">Countries Exhibited</div>
-        </div>
-        <div class="stat">
-          <div class="stat__number">6</div>
-          <div class="stat__label">Published Books</div>
-        </div>
       </div>
     </div>
   </section>
@@ -205,18 +788,19 @@
       <div class="footer__grid">
         <!-- Brand Column -->
         <div>
-          <div class="footer__brand">Jacky Lee</div>
-          <p class="footer__text">Distinguished visual artist and seasoned photographer from Hong Kong. Over two decades of capturing the world's beauty through landscape, nightscape, architectural, and aerial drone photography.</p>
+          <div class="footer__brand">Jacky Lee Visionary Creations</div>
+          <p class="footer__text">Distinguished visual artist, educator and award-winning photographer. Connecting cultures through photography, community and digital ethics.</p>
+          <p class="footer__text footer__business">ACN: 675 433 664 | ABN: 80 675 433 664</p>
         </div>
 
         <!-- Galleries Column -->
         <div>
           <h4 class="footer__heading">Galleries</h4>
           <ul class="footer__links">
-            <li><a href="galleries/golden-hours.html">Golden Hours</a></li>
-            <li><a href="galleries/monochrome-magic.html">Monochrome Magic</a></li>
-            <li><a href="galleries/natures-tapestry.html">Nature's Tapestry</a></li>
-            <li><a href="galleries/skyward-visions.html">Skyward Visions</a></li>
+            <li><a href="golden-hours.html">Golden Hours</a></li>
+            <li><a href="monochrome-magic.html">Monochrome Magic</a></li>
+            <li><a href="nature-unveiled.html">Nature Unveiled</a></li>
+            <li><a href="skyward-visions.html">Skyward Visions</a></li>
           </ul>
         </div>
 
@@ -224,10 +808,10 @@
         <div>
           <h4 class="footer__heading">Services</h4>
           <ul class="footer__links">
-            <li><a href="services.html">Fine Art Prints</a></li>
-            <li><a href="services.html">Workshops &amp; Courses</a></li>
-            <li><a href="services.html">Commercial Photography</a></li>
-            <li><a href="services.html">Private Commissions</a></li>
+            <li><a href="travel-companion.html">Travel Companion</a></li>
+            <li><a href="book-publications.html">Book Publications</a></li>
+            <li><a href="mindful-photography.html">Mindful Photography</a></li>
+            <li><a href="website-design.html">Website Design</a></li>
           </ul>
         </div>
 
@@ -236,32 +820,38 @@
           <h4 class="footer__heading">Connect</h4>
           <ul class="footer__links">
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="publications.html">Publications</a></li>
             <li><a href="recognition.html">Recognition</a></li>
             <li><a href="exhibition.html">Exhibitions</a></li>
+            <li><a href="services.html">All Services</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer__bottom">
-        <p class="footer__copyright">&copy; 2024 Jacky Lee. All rights reserved.</p>
+        <p class="footer__copyright">&copy; 2026 Jacky Lee - The Artist | All Rights Reserved</p>
         <div class="footer__social">
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <a href="https://www.facebook.com/skleejacky" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="https://x.com/jackysklee" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/iamjsklee/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
             </svg>
           </a>
-          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <a href="https://www.linkedin.com/in/sklphotography/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-            </svg>
-          </a>
-          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.13C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"></path>
-              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
             </svg>
           </a>
         </div>
