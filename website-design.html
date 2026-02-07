@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Website Design services by Jacky Lee - Engaging, aesthetically captivating static web pages crafted with digital craftsmanship. Responsive, SEO-conscious, and visually stunning.">
+  <meta name="author" content="Jacky Lee">
+  <meta name="keywords" content="Jacky Lee, website design, static web pages, responsive design, photography portfolio, SEO, Hong Kong">
+  <meta property="og:title" content="Website Design | Jacky Lee">
+  <meta property="og:description" content="Engaging, aesthetically captivating static web pages built with meticulous attention to detail and digital craftsmanship.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>Website Design | Jacky Lee</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ======== Header ======== -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        Jacky <span class="header__logo-accent">Lee</span>
+      </a>
+
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav__dropdown">
+          <a href="#galleries" class="nav__link nav__dropdown-toggle">Galleries</a>
+          <div class="nav__dropdown-menu">
+            <a href="galleries/golden-hours.html" class="nav__dropdown-item">Golden Hours</a>
+            <a href="galleries/monochrome-magic.html" class="nav__dropdown-item">Monochrome Magic</a>
+            <a href="galleries/natures-tapestry.html" class="nav__dropdown-item">Nature's Tapestry</a>
+            <a href="galleries/skyward-visions.html" class="nav__dropdown-item">Skyward Visions</a>
+          </div>
+        </div>
+        <a href="services.html" class="nav__link nav__link--active">Services</a>
+        <a href="publications.html" class="nav__link">Publications</a>
+        <a href="recognition.html" class="nav__link">Recognition</a>
+        <a href="exhibition.html" class="nav__link">Exhibition</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="nav-overlay" aria-hidden="true"></div>
+
+  <!-- ======== Page Header ======== -->
+  <section class="page-header">
+    <div class="container">
+      <span class="subtitle animate-in">Digital Craftsmanship</span>
+      <h1 class="page-header__title animate-in animate-in--delay-1">Website <span class="text-gradient">Design</span></h1>
+      <p class="page-header__description animate-in animate-in--delay-2">Engaging, aesthetically captivating static web pages built with the same eye for composition and detail that defines every photograph. Each site is a carefully composed digital canvas -- fast, elegant, and purposefully designed to leave a lasting impression.</p>
+    </div>
+  </section>
+
+  <!-- ======== Features Grid ======== -->
+  <section class="section" id="offerings">
+    <div class="container">
+      <div class="text-center mb-4 animate-in">
+        <span class="subtitle">What You Get</span>
+        <h2>Comprehensive <span class="text-gradient">Offerings</span></h2>
+        <p class="lead" style="max-width: 620px; margin: var(--spacing-md) auto 0;">Every project is delivered with a full suite of features designed to ensure your online presence is polished, performant, and professional.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Static Web Pages -->
+        <div class="feature animate-in">
+          <div class="feature__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
+              <polyline points="13 2 13 9 20 9"></polyline>
+            </svg>
+          </div>
+          <h3 class="feature__title">Static Web Pages</h3>
+          <p class="feature__text">A dependable, high-performance, low-maintenance online presence. Static sites load remarkably fast, require no databases, and deliver content with unwavering reliability.</p>
+        </div>
+
+        <!-- High-Resolution Graphics -->
+        <div class="feature animate-in animate-in--delay-1">
+          <div class="feature__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+          </div>
+          <h3 class="feature__title">High-Resolution Graphics</h3>
+          <p class="feature__text">Sites featuring optimized images that combine beauty with brisk load times. Every visual is carefully compressed and served at the ideal resolution for each screen size.</p>
+        </div>
+
+        <!-- SEO-Conscious Framework -->
+        <div class="feature animate-in animate-in--delay-2">
+          <div class="feature__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+          <h3 class="feature__title">SEO-Conscious Framework</h3>
+          <p class="feature__text">From optimized headings to rich meta descriptions, every page is built with search visibility in mind. Semantic markup and structured content help your site get found.</p>
+        </div>
+
+        <!-- Responsive Design -->
+        <div class="feature animate-in animate-in--delay-3">
+          <div class="feature__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+          </div>
+          <h3 class="feature__title">Responsive Design</h3>
+          <p class="feature__text">Seamless display across devices -- from desktop to smartphone. Layouts adapt fluidly so your content looks impeccable regardless of screen size or orientation.</p>
+        </div>
+
+        <!-- Domain Assistance -->
+        <div class="feature animate-in">
+          <div class="feature__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <h3 class="feature__title">Domain Assistance</h3>
+          <p class="feature__text">Helping with domain registration, DNS configuration, and deployment so your site goes live smoothly. Domain registration fees are not covered in the service.</p>
+        </div>
+
+        <!-- Cross-Browser Compatible -->
+        <div class="feature animate-in animate-in--delay-1">
+          <div class="feature__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+          </div>
+          <h3 class="feature__title">Cross-Browser Compatible</h3>
+          <p class="feature__text">Tested across all modern browsers -- Chrome, Firefox, Safari, and Edge. Your visitors enjoy a consistent, polished experience no matter their choice of browser.</p>
+        </div>
+
+        <!-- Collaborative Process -->
+        <div class="feature animate-in animate-in--delay-2">
+          <div class="feature__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="feature__title">Collaborative Process</h3>
+          <p class="feature__text">Embracing client input at every stage until every page aligns with your vision. Open communication and iterative refinement ensure the final result feels authentically yours.</p>
+        </div>
+
+        <!-- Maintenance Support -->
+        <div class="feature animate-in animate-in--delay-3">
+          <div class="feature__icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+            </svg>
+          </div>
+          <h3 class="feature__title">Maintenance Support</h3>
+          <p class="feature__text">Post-launch tweaks and updates available to keep your site current. Whether it is fresh content, layout adjustments, or performance tuning, ongoing support is always within reach.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Design Process / Approach ======== -->
+  <section class="section section--alt" id="process">
+    <div class="container">
+      <div class="split animate-in">
+        <div class="split__content">
+          <span class="subtitle">The Approach</span>
+          <h2>How Every Site <span class="text-gradient">Comes to Life</span></h2>
+          <div class="divider"></div>
+          <p class="lead">Every website begins the same way a photograph does -- with careful observation, thoughtful composition, and an unwavering commitment to the final image.</p>
+          <p>The process starts with a discovery conversation: understanding your goals, your audience, and the feeling you want your site to evoke. From there, wireframes and mockups take shape, translating ideas into visual structure before a single line of code is written.</p>
+          <p>Development follows a clean-code philosophy. Hand-written HTML and CSS ensure lightweight, accessible pages that perform beautifully. No bloated frameworks, no unnecessary dependencies -- just purposeful code that serves the design.</p>
+          <p>Before launch, every page undergoes thorough testing across devices and browsers. The result is a polished, professional site that reflects your identity and stands the test of time.</p>
+        </div>
+        <div class="split__image">
+          <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80" alt="Website design process - code and design on screen" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CTA Section ======== -->
+  <section class="cta-section" id="discuss">
+    <div class="container">
+      <div class="animate-in">
+        <span class="subtitle">Start a Conversation</span>
+        <h2 class="cta-section__title">Let's Discuss Your <span class="text-gradient">Project</span></h2>
+        <p class="cta-section__text">Have an idea for a website or need a refreshed online presence? Reach out and let's explore how a thoughtfully designed site can elevate your work.</p>
+        <a href="contact.html" class="btn btn--primary btn--lg">Get in Touch <span class="btn__arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Footer ======== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Brand Column -->
+        <div>
+          <div class="footer__brand">Jacky Lee</div>
+          <p class="footer__text">Distinguished visual artist and seasoned photographer from Hong Kong. Over two decades of capturing the world's beauty through landscape, nightscape, architectural, and aerial drone photography.</p>
+        </div>
+
+        <!-- Galleries Column -->
+        <div>
+          <h4 class="footer__heading">Galleries</h4>
+          <ul class="footer__links">
+            <li><a href="galleries/golden-hours.html">Golden Hours</a></li>
+            <li><a href="galleries/monochrome-magic.html">Monochrome Magic</a></li>
+            <li><a href="galleries/natures-tapestry.html">Nature's Tapestry</a></li>
+            <li><a href="galleries/skyward-visions.html">Skyward Visions</a></li>
+          </ul>
+        </div>
+
+        <!-- Services Column -->
+        <div>
+          <h4 class="footer__heading">Services</h4>
+          <ul class="footer__links">
+            <li><a href="services.html">Fine Art Prints</a></li>
+            <li><a href="services.html">Workshops &amp; Courses</a></li>
+            <li><a href="services.html">Commercial Photography</a></li>
+            <li><a href="services.html">Private Commissions</a></li>
+          </ul>
+        </div>
+
+        <!-- Connect Column -->
+        <div>
+          <h4 class="footer__heading">Connect</h4>
+          <ul class="footer__links">
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="recognition.html">Recognition</a></li>
+            <li><a href="exhibition.html">Exhibitions</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2024 Jacky Lee. All rights reserved.</p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.13C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"></path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

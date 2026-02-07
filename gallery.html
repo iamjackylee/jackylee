@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the photography gallery of Jacky Lee. A curated collection of visual art capturing moments, landscapes, and emotions.">
+  <meta name="keywords" content="Jacky Lee, photography, gallery, visual art, landscape, nature, portraits">
+  <meta name="author" content="Jacky Lee">
+  <meta property="og:title" content="Gallery | Jacky Lee - The Artist">
+  <meta property="og:description" content="A meticulously curated collection showcasing a blend of visual art and photography.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Gallery | Jacky Lee - The Artist</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ Header / Navigation ============ -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        Jacky <span class="header__logo-accent">Lee</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <div class="nav__dropdown">
+          <a href="gallery.html" class="nav__link nav__dropdown-toggle nav__link--active">Galleries</a>
+          <div class="nav__dropdown-menu">
+            <a href="gallery.html#golden-hours" class="nav__dropdown-item">Golden Hours</a>
+            <a href="gallery.html#monochrome-magic" class="nav__dropdown-item">Monochrome Magic</a>
+            <a href="gallery.html#natures-tapestry" class="nav__dropdown-item">Nature's Tapestry</a>
+            <a href="gallery.html#skyward-visions" class="nav__dropdown-item">Skyward Visions</a>
+          </div>
+        </div>
+        <a href="services.html" class="nav__link">Services</a>
+        <a href="publications.html" class="nav__link">Publications</a>
+        <a href="recognition.html" class="nav__link">Recognition</a>
+        <a href="exhibition.html" class="nav__link">Exhibition</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav overlay -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- ============ Page Header ============ -->
+  <section class="page-header">
+    <div class="container">
+      <span class="subtitle animate-in">The Gallery</span>
+      <h1 class="page-header__title animate-in animate-in--delay-1">Stunning <span class="text-accent">Visuals</span></h1>
+      <p class="page-header__description animate-in animate-in--delay-2">A meticulously curated collection showcasing a blend of visual art and photography, capturing moments, landscapes, and emotions.</p>
+      <div class="divider divider--center animate-in animate-in--delay-3"></div>
+    </div>
+  </section>
+
+  <!-- ============ Gallery Grid (Masonry) ============ -->
+  <section class="section" id="gallery">
+    <div class="container container--wide">
+      <div class="gallery-grid--masonry">
+
+        <!-- Gallery Item 1 -->
+        <article class="gallery-item animate-in" data-lightbox="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&q=80" alt="Yosemite Valley landscape with reflections on still water" loading="lazy">
+          <div class="gallery-item__overlay">
+            <h3 class="gallery-item__title">Valley of Dreams</h3>
+            <span class="gallery-item__meta">Landscape</span>
+          </div>
+        </article>
+
+        <!-- Gallery Item 2 -->
+        <article class="gallery-item animate-in animate-in--delay-1" data-lightbox="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&q=80" alt="Sunlight streaming through mountain landscape" loading="lazy">
+          <div class="gallery-item__overlay">
+            <h3 class="gallery-item__title">Morning Radiance</h3>
+            <span class="gallery-item__meta">Golden Hours</span>
+          </div>
+        </article>
+
+        <!-- Gallery Item 3 -->
+        <article class="gallery-item animate-in animate-in--delay-2" data-lightbox="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=600&q=80" alt="Towering trees in a lush forest pathway" loading="lazy">
+          <div class="gallery-item__overlay">
+            <h3 class="gallery-item__title">Ancient Canopy</h3>
+            <span class="gallery-item__meta">Nature's Tapestry</span>
+          </div>
+        </article>
+
+        <!-- Gallery Item 4 -->
+        <article class="gallery-item animate-in" data-lightbox="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600&q=80" alt="Waterfall cascading into a misty pool surrounded by greenery" loading="lazy">
+          <div class="gallery-item__overlay">
+            <h3 class="gallery-item__title">Cascade Whispers</h3>
+            <span class="gallery-item__meta">Nature's Tapestry</span>
+          </div>
+        </article>
+
+        <!-- Gallery Item 5 -->
+        <article class="gallery-item animate-in animate-in--delay-1" data-lightbox="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=600&q=80" alt="Rolling green hills under a dramatic sunset sky" loading="lazy">
+          <div class="gallery-item__overlay">
+            <h3 class="gallery-item__title">Emerald Horizons</h3>
+            <span class="gallery-item__meta">Landscape</span>
+          </div>
+        </article>
+
+        <!-- Gallery Item 6 -->
+        <article class="gallery-item animate-in animate-in--delay-2" data-lightbox="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80" alt="Aerial view of a winding river through dense green forest" loading="lazy">
+          <div class="gallery-item__overlay">
+            <h3 class="gallery-item__title">River's Journey</h3>
+            <span class="gallery-item__meta">Skyward Visions</span>
+          </div>
+        </article>
+
+        <!-- Gallery Item 7 -->
+        <article class="gallery-item animate-in" data-lightbox="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600&q=80" alt="Golden sunlight streaming across a rural field at dawn" loading="lazy">
+          <div class="gallery-item__overlay">
+            <h3 class="gallery-item__title">Fields of Gold</h3>
+            <span class="gallery-item__meta">Golden Hours</span>
+          </div>
+        </article>
+
+        <!-- Gallery Item 8 -->
+        <article class="gallery-item animate-in animate-in--delay-1" data-lightbox="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80" alt="Sunbeams filtering through a dense forest canopy" loading="lazy">
+          <div class="gallery-item__overlay">
+            <h3 class="gallery-item__title">Forest Cathedral</h3>
+            <span class="gallery-item__meta">Nature's Tapestry</span>
+          </div>
+        </article>
+
+        <!-- Gallery Item 9 -->
+        <article class="gallery-item animate-in animate-in--delay-2" data-lightbox="https://images.unsplash.com/photo-1518173946687-a1e0e2a3a968?w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1518173946687-a1e0e2a3a968?w=600&q=80" alt="Minimalist architectural detail in monochrome tones" loading="lazy">
+          <div class="gallery-item__overlay">
+            <h3 class="gallery-item__title">Silent Geometry</h3>
+            <span class="gallery-item__meta">Monochrome Magic</span>
+          </div>
+        </article>
+
+        <!-- Gallery Item 10 -->
+        <article class="gallery-item animate-in" data-lightbox="https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=600&q=80" alt="Mountain creek flowing over smooth rocks in soft light" loading="lazy">
+          <div class="gallery-item__overlay">
+            <h3 class="gallery-item__title">Still Waters</h3>
+            <span class="gallery-item__meta">Landscape</span>
+          </div>
+        </article>
+
+        <!-- Gallery Item 11 -->
+        <article class="gallery-item animate-in animate-in--delay-1" data-lightbox="https://images.unsplash.com/photo-1540206395-68808572332f?w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1540206395-68808572332f?w=600&q=80" alt="Dramatic coastline with waves crashing against cliffs at sunset" loading="lazy">
+          <div class="gallery-item__overlay">
+            <h3 class="gallery-item__title">Coastal Ember</h3>
+            <span class="gallery-item__meta">Golden Hours</span>
+          </div>
+        </article>
+
+        <!-- Gallery Item 12 -->
+        <article class="gallery-item animate-in animate-in--delay-2" data-lightbox="https://images.unsplash.com/photo-1465056836900-8f1e940b3925?w=1200&q=80">
+          <img src="https://images.unsplash.com/photo-1465056836900-8f1e940b3925?w=600&q=80" alt="Vast sky with scattered clouds over a serene horizon" loading="lazy">
+          <div class="gallery-item__overlay">
+            <h3 class="gallery-item__title">Boundless Skies</h3>
+            <span class="gallery-item__meta">Skyward Visions</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA Section ============ -->
+  <section class="cta-section section--alt">
+    <div class="container">
+      <span class="subtitle animate-in">Get in Touch</span>
+      <h2 class="cta-section__title animate-in animate-in--delay-1">Interested in Working Together<span class="text-accent">?</span></h2>
+      <p class="cta-section__text animate-in animate-in--delay-2">Whether you need stunning visuals for your brand, a memorable event captured, or a collaborative art project, let's create something extraordinary together.</p>
+      <div class="animate-in animate-in--delay-3" style="position: relative;">
+        <a href="contact.html" class="btn btn--primary btn--lg">Start a Conversation <span class="btn__arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Footer ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">Jacky Lee</div>
+          <p class="footer__text">Visual artist and photographer dedicated to capturing the beauty of our world through a unique creative lens.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigate</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Galleries</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="publications.html">Publications</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Explore</h4>
+          <ul class="footer__links">
+            <li><a href="recognition.html">Recognition</a></li>
+            <li><a href="exhibition.html">Exhibition</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Connect</h4>
+          <ul class="footer__links">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter / X</a></li>
+            <li><a href="#">Behance</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 Jacky Lee. All rights reserved.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Twitter">X</a>
+          <a href="#" aria-label="Behance">Be</a>
+          <a href="#" aria-label="LinkedIn">Li</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ Lightbox ============ -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" aria-label="Close lightbox">&times;</button>
+    <img src="" alt="Full size gallery image">
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

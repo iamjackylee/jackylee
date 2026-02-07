@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jacky Lee - Distinguished visual artist and seasoned photographer from Hong Kong. Specializing in landscape, nightscape, architectural, black and white, and aerial drone photography.">
+  <meta name="author" content="Jacky Lee">
+  <meta name="keywords" content="Jacky Lee, photography, Hong Kong, landscape, nightscape, architectural, aerial drone, fine art prints">
+  <meta property="og:title" content="Jacky Lee | Visual Maestro">
+  <meta property="og:description" content="Explore the curated galleries and exclusive prints of award-winning photographer Jacky Lee.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>Jacky Lee | Visual Maestro</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ======== Header ======== -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        Jacky <span class="header__logo-accent">Lee</span>
+      </a>
+
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav__dropdown">
+          <a href="#galleries" class="nav__link nav__dropdown-toggle">Galleries</a>
+          <div class="nav__dropdown-menu">
+            <a href="galleries/golden-hours.html" class="nav__dropdown-item">Golden Hours</a>
+            <a href="galleries/monochrome-magic.html" class="nav__dropdown-item">Monochrome Magic</a>
+            <a href="galleries/natures-tapestry.html" class="nav__dropdown-item">Nature's Tapestry</a>
+            <a href="galleries/skyward-visions.html" class="nav__dropdown-item">Skyward Visions</a>
+          </div>
+        </div>
+        <a href="services.html" class="nav__link">Services</a>
+        <a href="publications.html" class="nav__link">Publications</a>
+        <a href="recognition.html" class="nav__link">Recognition</a>
+        <a href="exhibition.html" class="nav__link">Exhibition</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="nav-overlay" aria-hidden="true"></div>
+
+  <!-- ======== Hero Section ======== -->
+  <section class="hero" id="home">
+    <div class="hero__bg">
+      <img src="https://images.unsplash.com/photo-1500534314263-a845f593db23?w=1920&q=80" alt="Dramatic landscape photography by Jacky Lee" loading="eager">
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <span class="subtitle animate-in">Award-Winning Photographer</span>
+      <h1 class="hero__title animate-in animate-in--delay-1">Visual <span class="text-gradient">Maestro</span></h1>
+      <p class="hero__subtitle animate-in animate-in--delay-2">Explore curated galleries showcasing over two decades of photographic mastery, from sweeping landscapes to intimate architectural studies. Discover exclusive fine art prints.</p>
+      <div class="hero__cta animate-in animate-in--delay-3">
+        <a href="#galleries" class="btn btn--primary btn--lg">Explore Galleries <span class="btn__arrow">&rarr;</span></a>
+        <a href="services.html" class="btn btn--outline btn--lg">View Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== About Section ======== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="split animate-in">
+        <div class="split__content">
+          <span class="subtitle">About the Artist</span>
+          <h2>Jacky Lee</h2>
+          <div class="divider"></div>
+          <p class="lead">A distinguished visual artist and seasoned photographer hailing from Hong Kong, Jacky Lee brings over two decades of experience to every frame he captures.</p>
+          <p>A self-taught artist with a distinctive style, Jacky specializes in landscape, nightscape, architectural, black and white, and aerial drone photography. His work has earned international acclaim, including the prestigious National Geographic Photo Contest Winner title in 2017.</p>
+          <p>Beyond the lens, Jacky is a Chartered Building Engineer and Chartered Building Surveyor (RICS, CABE). He serves as a photography advisor at the Hong Kong Biodiversity Museum and as a course tutor at HKU, nurturing the next generation of visual storytellers.</p>
+          <a href="about.html" class="btn btn--ghost mt-2">Read Full Biography <span class="btn__arrow">&rarr;</span></a>
+        </div>
+        <div class="split__image">
+          <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=800&q=80" alt="Jacky Lee - photographer portrait" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Featured Galleries Section ======== -->
+  <section class="section section--alt" id="galleries">
+    <div class="container">
+      <div class="text-center mb-4 animate-in">
+        <span class="subtitle">Portfolio</span>
+        <h2>Featured Galleries</h2>
+        <p class="lead" style="max-width: 600px; margin: var(--spacing-md) auto 0;">A curated selection of collections spanning landscapes bathed in golden light, stark monochrome studies, the raw beauty of nature, and breathtaking aerial perspectives.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- Golden Hours -->
+        <a href="galleries/golden-hours.html" class="card animate-in animate-in--delay-1">
+          <div class="card__image">
+            <img src="https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=600&q=80" alt="Golden Hours gallery - warm sunset landscape photography" loading="lazy">
+            <div class="card__image-overlay"></div>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Landscape</span>
+            <h3 class="card__title">Golden Hours</h3>
+            <p class="card__text">Capturing the ephemeral magic of sunrise and sunset, where light transforms ordinary landscapes into extraordinary canvases of warmth and wonder.</p>
+            <span class="card__link">View Collection <span class="btn__arrow">&rarr;</span></span>
+          </div>
+        </a>
+
+        <!-- Monochrome Magic -->
+        <a href="galleries/monochrome-magic.html" class="card animate-in animate-in--delay-2">
+          <div class="card__image">
+            <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600&q=80" alt="Monochrome Magic gallery - black and white photography" loading="lazy">
+            <div class="card__image-overlay"></div>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Black &amp; White</span>
+            <h3 class="card__title">Monochrome Magic</h3>
+            <p class="card__text">Stripped of colour, these images reveal the essence of form, texture, and emotion through the timeless art of black and white photography.</p>
+            <span class="card__link">View Collection <span class="btn__arrow">&rarr;</span></span>
+          </div>
+        </a>
+
+        <!-- Nature's Tapestry -->
+        <a href="galleries/natures-tapestry.html" class="card animate-in animate-in--delay-3">
+          <div class="card__image">
+            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80" alt="Nature's Tapestry gallery - natural landscape photography" loading="lazy">
+            <div class="card__image-overlay"></div>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Nature</span>
+            <h3 class="card__title">Nature's Tapestry</h3>
+            <p class="card__text">An intimate exploration of the natural world, weaving together intricate details of flora, fauna, and the untamed wilderness into visual poetry.</p>
+            <span class="card__link">View Collection <span class="btn__arrow">&rarr;</span></span>
+          </div>
+        </a>
+
+        <!-- Skyward Visions -->
+        <a href="galleries/skyward-visions.html" class="card animate-in animate-in--delay-4">
+          <div class="card__image">
+            <img src="https://images.unsplash.com/photo-1488229297570-58520851e868?w=600&q=80" alt="Skyward Visions gallery - aerial drone photography" loading="lazy">
+            <div class="card__image-overlay"></div>
+          </div>
+          <div class="card__body">
+            <span class="card__tag">Aerial &amp; Drone</span>
+            <h3 class="card__title">Skyward Visions</h3>
+            <p class="card__text">Perspectives from above that redefine how we see the world, revealing patterns, symmetry, and hidden beauty only visible from the sky.</p>
+            <span class="card__link">View Collection <span class="btn__arrow">&rarr;</span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Stats Section ======== -->
+  <section class="section" id="stats">
+    <div class="container">
+      <div class="stats animate-in">
+        <div class="stat">
+          <div class="stat__number">20+</div>
+          <div class="stat__label">Years Experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">50+</div>
+          <div class="stat__label">International Awards</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">18+</div>
+          <div class="stat__label">Countries Exhibited</div>
+        </div>
+        <div class="stat">
+          <div class="stat__number">6</div>
+          <div class="stat__label">Published Books</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CTA Section ======== -->
+  <section class="cta-section section--alt" id="connect">
+    <div class="container">
+      <div class="animate-in">
+        <span class="subtitle">Get in Touch</span>
+        <h2 class="cta-section__title">Let's Create Something <span class="text-gradient">Extraordinary</span></h2>
+        <p class="cta-section__text">Whether you're looking for exclusive fine art prints, professional photography services, or collaboration opportunities, I'd love to hear from you.</p>
+        <a href="contact.html" class="btn btn--primary btn--lg">Connect with Jacky <span class="btn__arrow">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Footer ======== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Brand Column -->
+        <div>
+          <div class="footer__brand">Jacky Lee</div>
+          <p class="footer__text">Distinguished visual artist and seasoned photographer from Hong Kong. Over two decades of capturing the world's beauty through landscape, nightscape, architectural, and aerial drone photography.</p>
+        </div>
+
+        <!-- Galleries Column -->
+        <div>
+          <h4 class="footer__heading">Galleries</h4>
+          <ul class="footer__links">
+            <li><a href="galleries/golden-hours.html">Golden Hours</a></li>
+            <li><a href="galleries/monochrome-magic.html">Monochrome Magic</a></li>
+            <li><a href="galleries/natures-tapestry.html">Nature's Tapestry</a></li>
+            <li><a href="galleries/skyward-visions.html">Skyward Visions</a></li>
+          </ul>
+        </div>
+
+        <!-- Services Column -->
+        <div>
+          <h4 class="footer__heading">Services</h4>
+          <ul class="footer__links">
+            <li><a href="services.html">Fine Art Prints</a></li>
+            <li><a href="services.html">Workshops &amp; Courses</a></li>
+            <li><a href="services.html">Commercial Photography</a></li>
+            <li><a href="services.html">Private Commissions</a></li>
+          </ul>
+        </div>
+
+        <!-- Connect Column -->
+        <div>
+          <h4 class="footer__heading">Connect</h4>
+          <ul class="footer__links">
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="recognition.html">Recognition</a></li>
+            <li><a href="exhibition.html">Exhibitions</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2024 Jacky Lee. All rights reserved.</p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.13C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"></path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" role="dialog" aria-label="Image lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="Close lightbox">&times;</button>
+    <img src="" alt="Enlarged view">
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Travel Companion - Embark on global adventures with Jacky Lee, a dedicated professional photographer and skilled assistant to capture every mesmerizing moment of your journey.">
+  <meta name="keywords" content="travel photography, travel companion, photography services, adventure photography, Jacky Lee">
+  <meta name="author" content="Jacky Lee">
+  <meta property="og:title" content="Travel Companion | Jacky Lee Photography">
+  <meta property="og:description" content="Embark on global adventures with a dedicated professional photographer and skilled assistant to capture every mesmerizing moment of your journey.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&q=80">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Travel Companion | Jacky Lee Photography</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ======== Header ======== -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        Jacky <span class="header__logo-accent">Lee</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav__dropdown">
+          <a href="#" class="nav__link nav__dropdown-toggle">Galleries</a>
+          <div class="nav__dropdown-menu">
+            <a href="golden-hours.html" class="nav__dropdown-item">Golden Hours</a>
+            <a href="monochrome-magic.html" class="nav__dropdown-item">Monochrome Magic</a>
+            <a href="natures-tapestry.html" class="nav__dropdown-item">Nature's Tapestry</a>
+            <a href="skyward-visions.html" class="nav__dropdown-item">Skyward Visions</a>
+          </div>
+        </div>
+        <a href="services.html" class="nav__link nav__link--active">Services</a>
+        <a href="publications.html" class="nav__link">Publications</a>
+        <a href="recognition.html" class="nav__link">Recognition</a>
+        <a href="exhibition.html" class="nav__link">Exhibition</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="nav-overlay" aria-hidden="true"></div>
+
+  <!-- ======== Hero Section ======== -->
+  <section class="hero hero--medium" aria-label="Travel Companion hero">
+    <div class="hero__bg">
+      <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920&q=80" alt="Breathtaking mountain landscape bathed in golden sunlight with a winding valley below" loading="eager">
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <span class="subtitle animate-in">Photography Service</span>
+      <h1 class="hero__title animate-in animate-in--delay-1">Travel Companion</h1>
+      <p class="hero__subtitle animate-in animate-in--delay-2">Embark on global adventures with a dedicated professional photographer and skilled assistant to capture every mesmerizing moment of your journey.</p>
+      <div class="hero__cta animate-in animate-in--delay-3">
+        <a href="#whats-included" class="btn btn--primary">Discover More</a>
+        <a href="contact.html" class="btn btn--outline">Book Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== What's Included Section ======== -->
+  <section class="section" id="whats-included" aria-label="What is included in the travel companion service">
+    <div class="container">
+      <div class="text-center mb-4 animate-in">
+        <span class="subtitle">The Experience</span>
+        <h2>What's Included</h2>
+        <div class="divider divider--center"></div>
+        <p class="lead" style="max-width: 650px; margin: var(--spacing-md) auto 0;">Every travel companion engagement is thoughtfully designed to ensure you return home with stunning imagery and unforgettable memories from your adventure.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature animate-in animate-in--delay-1">
+          <div class="feature__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+              <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+          </div>
+          <h3 class="feature__title">Professional Photographer</h3>
+          <p class="feature__text">A professional photographer accompanying you on your travels, ensuring every significant moment and breathtaking vista is captured with precision and artistry.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature animate-in animate-in--delay-2">
+          <div class="feature__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          </div>
+          <h3 class="feature__title">Expert Guidance</h3>
+          <p class="feature__text">Expert guidance on photography techniques and compositions, helping you refine your own skills while discovering new creative perspectives along the way.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature animate-in animate-in--delay-3">
+          <div class="feature__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+          </div>
+          <h3 class="feature__title">Post-Processing &amp; Delivery</h3>
+          <p class="feature__text">Post-processing and delivery of high-quality images, meticulously edited and colour-graded to bring out the very best in every photograph from your journey.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature animate-in animate-in--delay-4">
+          <div class="feature__icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <h3 class="feature__title">Flexible Itineraries</h3>
+          <p class="feature__text">Flexible itineraries tailored to your interests, whether you crave remote wilderness, vibrant cityscapes, cultural landmarks, or hidden gems off the beaten path.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Destinations & Experience Split Section ======== -->
+  <section class="section section--alt" aria-label="Destinations and experience">
+    <div class="container">
+      <div class="split animate-in">
+        <div class="split__image">
+          <img src="https://images.unsplash.com/photo-1500534314263-a845f593db23?w=800&q=80" alt="Stunning sunset over a serene waterscape with warm golden reflections" loading="lazy">
+        </div>
+        <div class="split__content">
+          <span class="subtitle">Destinations &amp; Experience</span>
+          <h2>Your Story, Beautifully Told</h2>
+          <div class="divider"></div>
+          <p class="lead">From the sun-drenched coastlines of Southeast Asia to the rugged peaks of Patagonia, Jacky has photographed across six continents and brings an intimate knowledge of the world's most photogenic destinations.</p>
+          <p>Every journey is unique. Whether you are planning a once-in-a-lifetime honeymoon, a family expedition, a solo soul-searching adventure, or a corporate retreat, Jacky adapts to your pace and vision. He scouts locations in advance, times shoots for optimal light, and ensures candid, natural moments are preserved alongside carefully composed portraits and landscapes.</p>
+          <p>The result is a curated collection of images that tell the complete story of your travels -- not just where you went, but how it felt to be there.</p>
+          <a href="contact.html" class="btn btn--ghost mt-2">Plan Your Journey <span class="btn__arrow">&rarr;</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== CTA Section ======== -->
+  <section class="cta-section" aria-label="Book a travel companion session">
+    <div class="container text-center">
+      <span class="subtitle animate-in">Start Your Adventure</span>
+      <h2 class="cta-section__title animate-in animate-in--delay-1">Book a Travel Companion <span class="text-gradient">Session</span></h2>
+      <p class="cta-section__text animate-in animate-in--delay-2">
+        Ready to explore the world with a professional photographer by your side? Get in touch to discuss your dream destination, itinerary, and how we can craft an unforgettable visual narrative together.
+      </p>
+      <div class="animate-in animate-in--delay-3">
+        <a href="contact.html" class="btn btn--primary btn--lg">
+          Book Your Session
+          <span class="btn__arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Footer ======== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Brand Column -->
+        <div>
+          <div class="footer__brand">Jacky Lee</div>
+          <p class="footer__text">Photographer and visual storyteller capturing the world's most breathtaking moments through light, shadow, and perspective.</p>
+        </div>
+
+        <!-- Galleries Column -->
+        <div>
+          <h4 class="footer__heading">Galleries</h4>
+          <ul class="footer__links">
+            <li><a href="golden-hours.html">Golden Hours</a></li>
+            <li><a href="monochrome-magic.html">Monochrome Magic</a></li>
+            <li><a href="natures-tapestry.html">Nature's Tapestry</a></li>
+            <li><a href="skyward-visions.html">Skyward Visions</a></li>
+          </ul>
+        </div>
+
+        <!-- Pages Column -->
+        <div>
+          <h4 class="footer__heading">Pages</h4>
+          <ul class="footer__links">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="recognition.html">Recognition</a></li>
+            <li><a href="exhibition.html">Exhibition</a></li>
+          </ul>
+        </div>
+
+        <!-- Connect Column -->
+        <div>
+          <h4 class="footer__heading">Connect</h4>
+          <ul class="footer__links">
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 Jacky Lee. All rights reserved.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Twitter">TW</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" role="dialog" aria-label="Image lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="Close lightbox">&times;</button>
+    <img src="" alt="Enlarged gallery photo">
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

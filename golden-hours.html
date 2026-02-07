@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Golden Hours - A photography gallery by Jacky Lee featuring mesmerizing captures of sunrise and sunset in their most ethereal light.">
+  <meta name="keywords" content="golden hour photography, sunrise, sunset, landscape photography, Jacky Lee">
+  <meta name="author" content="Jacky Lee">
+  <meta property="og:title" content="Golden Hours | Jacky Lee Photography">
+  <meta property="og:description" content="Mesmerizing captures of sunrise and sunset, showcasing the world in its most ethereal light and captivating hues.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=1200&q=80">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Golden Hours | Jacky Lee Photography</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        Jacky <span class="header__logo-accent">Lee</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav__dropdown">
+          <a href="#" class="nav__link nav__dropdown-toggle nav__link--active">Galleries</a>
+          <div class="nav__dropdown-menu">
+            <a href="golden-hours.html" class="nav__dropdown-item nav__link--active">Golden Hours</a>
+            <a href="monochrome-magic.html" class="nav__dropdown-item">Monochrome Magic</a>
+            <a href="natures-tapestry.html" class="nav__dropdown-item">Nature's Tapestry</a>
+            <a href="skyward-visions.html" class="nav__dropdown-item">Skyward Visions</a>
+          </div>
+        </div>
+        <a href="services.html" class="nav__link">Services</a>
+        <a href="publications.html" class="nav__link">Publications</a>
+        <a href="recognition.html" class="nav__link">Recognition</a>
+        <a href="exhibition.html" class="nav__link">Exhibition</a>
+        <a href="contact.html" class="nav__link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="nav-overlay"></div>
+
+  <!-- Hero Section -->
+  <section class="hero hero--medium" aria-label="Golden Hours hero">
+    <div class="hero__bg">
+      <img src="https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=1920&q=80" alt="Golden hour landscape with warm sunlight illuminating the horizon" loading="eager">
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <span class="subtitle animate-in">Gallery Collection</span>
+      <h1 class="hero__title animate-in animate-in--delay-1">Golden Hours</h1>
+      <p class="hero__subtitle animate-in animate-in--delay-2">Mesmerizing captures of sunrise and sunset, showcasing the world in its most ethereal light and captivating hues.</p>
+      <div class="hero__cta animate-in animate-in--delay-3">
+        <a href="#gallery" class="btn btn--primary">View Gallery</a>
+        <a href="contact.html" class="btn btn--outline">Order Prints</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Text Section -->
+  <section class="section" aria-label="About golden hour photography">
+    <div class="container container--narrow text-center">
+      <div class="animate-in">
+        <span class="subtitle">About This Collection</span>
+        <h2>The Magic Between Day and Night</h2>
+        <div class="divider divider--center"></div>
+      </div>
+      <p class="lead animate-in animate-in--delay-1">
+        There is a fleeting moment each day when the sun hovers just above the horizon, painting the world in hues of amber, rose, and molten gold. This collection is a tribute to those precious minutes -- the golden hours -- when ordinary landscapes are transformed into extraordinary visions of warmth and wonder.
+      </p>
+      <p class="lead animate-in animate-in--delay-2">
+        Each photograph in this series was captured during that brief, luminous window when light bends softly through the atmosphere, casting long shadows and wrapping every surface in a gentle, radiant glow. From misty meadows to serene coastlines, these images invite you to pause and witness the quiet grandeur of nature's most enchanting light.
+      </p>
+    </div>
+  </section>
+
+  <!-- Gallery Grid Section -->
+  <section class="section section--alt" id="gallery" aria-label="Golden Hours photo gallery">
+    <div class="container container--wide">
+      <div class="text-center mb-4 animate-in">
+        <span class="subtitle">The Collection</span>
+        <h2>Golden Hours Gallery</h2>
+        <div class="divider divider--center"></div>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- Image 1 -->
+        <div class="gallery-item animate-in" data-lightbox="https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=1920&q=80">
+          <img src="https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=600&q=80" alt="Warm golden light bathing a tranquil landscape at sunset" loading="lazy">
+          <div class="gallery-item__overlay">
+            <h4 class="gallery-item__title">Amber Horizon</h4>
+            <span class="gallery-item__meta">Sunset &middot; Landscape</span>
+          </div>
+        </div>
+
+        <!-- Image 2 -->
+        <div class="gallery-item animate-in animate-in--delay-1" data-lightbox="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1920&q=80">
+          <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600&q=80" alt="Sun rays streaming through trees during golden hour" loading="lazy">
+          <div class="gallery-item__overlay">
+            <h4 class="gallery-item__title">Light Through the Canopy</h4>
+            <span class="gallery-item__meta">Sunrise &middot; Forest</span>
+          </div>
+        </div>
+
+        <!-- Image 3 -->
+        <div class="gallery-item animate-in animate-in--delay-2" data-lightbox="https://images.unsplash.com/photo-1500534314263-a845f593db23?w=1920&q=80">
+          <img src="https://images.unsplash.com/photo-1500534314263-a845f593db23?w=600&q=80" alt="Warm sunset reflections on still water" loading="lazy">
+          <div class="gallery-item__overlay">
+            <h4 class="gallery-item__title">Reflections in Gold</h4>
+            <span class="gallery-item__meta">Sunset &middot; Waterscape</span>
+          </div>
+        </div>
+
+        <!-- Image 4 -->
+        <div class="gallery-item animate-in animate-in--delay-3" data-lightbox="https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=1920&q=80">
+          <img src="https://images.unsplash.com/photo-1507400492013-162706c8c05e?w=600&q=80" alt="Fiery sunset sky with dramatic cloud formations" loading="lazy">
+          <div class="gallery-item__overlay">
+            <h4 class="gallery-item__title">Painted Skies</h4>
+            <span class="gallery-item__meta">Sunset &middot; Cloudscape</span>
+          </div>
+        </div>
+
+        <!-- Image 5 -->
+        <div class="gallery-item animate-in" data-lightbox="https://images.unsplash.com/photo-1494548162494-384bba4ab999?w=1920&q=80">
+          <img src="https://images.unsplash.com/photo-1494548162494-384bba4ab999?w=600&q=80" alt="Misty sunrise over rolling hills with golden tones" loading="lazy">
+          <div class="gallery-item__overlay">
+            <h4 class="gallery-item__title">Morning Mist</h4>
+            <span class="gallery-item__meta">Sunrise &middot; Hills</span>
+          </div>
+        </div>
+
+        <!-- Image 6 -->
+        <div class="gallery-item animate-in animate-in--delay-1" data-lightbox="https://images.unsplash.com/photo-1472120435266-95a5f09dbee0?w=1920&q=80">
+          <img src="https://images.unsplash.com/photo-1472120435266-95a5f09dbee0?w=600&q=80" alt="Silhouetted landscape against a vibrant golden sky" loading="lazy">
+          <div class="gallery-item__overlay">
+            <h4 class="gallery-item__title">Silhouette and Glow</h4>
+            <span class="gallery-item__meta">Sunset &middot; Silhouette</span>
+          </div>
+        </div>
+
+        <!-- Image 7 -->
+        <div class="gallery-item animate-in animate-in--delay-2" data-lightbox="https://images.unsplash.com/photo-1490682143684-14369e18dce8?w=1920&q=80">
+          <img src="https://images.unsplash.com/photo-1490682143684-14369e18dce8?w=600&q=80" alt="Warm light cascading over a mountain valley at dusk" loading="lazy">
+          <div class="gallery-item__overlay">
+            <h4 class="gallery-item__title">Valley of Light</h4>
+            <span class="gallery-item__meta">Sunset &middot; Mountains</span>
+          </div>
+        </div>
+
+        <!-- Image 8 -->
+        <div class="gallery-item animate-in animate-in--delay-3" data-lightbox="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=80">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80" alt="Majestic mountain peak bathed in the last light of day" loading="lazy">
+          <div class="gallery-item__overlay">
+            <h4 class="gallery-item__title">Last Light on the Summit</h4>
+            <span class="gallery-item__meta">Sunset &middot; Alpine</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote / Testimonial Section -->
+  <section class="section" aria-label="Testimonial about golden hour photography">
+    <div class="container">
+      <div class="testimonial animate-in">
+        <blockquote class="testimonial__quote">
+          The golden hour is not merely a time of day -- it is a state of grace. In those fleeting moments, the world sheds its ordinary skin and reveals a beauty so profound that it humbles both the lens and the eye behind it.
+        </blockquote>
+        <p class="testimonial__author">Jacky Lee &mdash; On the Art of Chasing Light</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section section--alt" aria-label="Contact for print purchases">
+    <div class="container text-center">
+      <span class="subtitle animate-in">Bring the Light Home</span>
+      <h2 class="cta-section__title animate-in animate-in--delay-1">Own a Piece of the Golden Hour</h2>
+      <p class="cta-section__text animate-in animate-in--delay-2">
+        Every image in this collection is available as a museum-quality fine art print. From gallery-wrapped canvas to archival giclée, bring the warmth and wonder of golden hour into your space.
+      </p>
+      <div class="animate-in animate-in--delay-3">
+        <a href="contact.html" class="btn btn--primary btn--lg">
+          Inquire About Prints
+          <span class="btn__arrow">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">Jacky Lee</div>
+          <p class="footer__text">Photographer and visual storyteller capturing the world's most breathtaking moments through light, shadow, and perspective.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Galleries</h4>
+          <ul class="footer__links">
+            <li><a href="golden-hours.html">Golden Hours</a></li>
+            <li><a href="monochrome-magic.html">Monochrome Magic</a></li>
+            <li><a href="natures-tapestry.html">Nature's Tapestry</a></li>
+            <li><a href="skyward-visions.html">Skyward Visions</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Pages</h4>
+          <ul class="footer__links">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="recognition.html">Recognition</a></li>
+            <li><a href="exhibition.html">Exhibition</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Connect</h4>
+          <ul class="footer__links">
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 Jacky Lee. All rights reserved.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Twitter">TW</a>
+          <a href="#" aria-label="LinkedIn">LI</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" role="dialog" aria-label="Image lightbox" aria-hidden="true">
+    <button class="lightbox__close" aria-label="Close lightbox">&times;</button>
+    <img src="" alt="Enlarged gallery photo">
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
