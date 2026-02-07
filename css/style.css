@@ -1111,6 +1111,138 @@ p {
   line-height: 1.6;
 }
 
+/* --- Credentials Tags --- */
+.credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+}
+
+.credentials__tag {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* --- Awards Row --- */
+.awards-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.award-card {
+  text-align: center;
+  padding: var(--spacing-xl);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-card);
+  transition: all var(--transition-base);
+}
+
+.award-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.award-card__icon {
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-md);
+}
+
+.award-card__title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-xs);
+  line-height: 1.3;
+}
+
+.award-card__detail {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.award-card__year {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+}
+
+/* --- Philosophy Roles --- */
+.philosophy-roles {
+  margin-top: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.philosophy-role {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-bg-card);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.philosophy-role strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-xs);
+}
+
+.philosophy-role span {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* --- Split Reverse --- */
+.split--reverse {
+  direction: rtl;
+}
+
+.split--reverse > * {
+  direction: ltr;
+}
+
+/* --- Trusted Logos Row --- */
+.trusted-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.trusted-note {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-md);
+}
+
+/* --- Utility: mt-3 --- */
+.mt-3 {
+  margin-top: var(--spacing-xl);
+}
+
+/* --- Utility: mb-3 --- */
+.mb-3 {
+  margin-bottom: var(--spacing-xl);
+}
+
 /* --- Footer --- */
 .footer {
   border-top: 1px solid var(--color-border);
@@ -1660,6 +1792,14 @@ p {
   .partners-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .awards-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .split--reverse {
+    direction: ltr;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1682,6 +1822,14 @@ p {
 
   .partners-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .awards-row {
+    grid-template-columns: 1fr;
+  }
+
+  .trusted-logos {
+    gap: var(--spacing-md);
   }
 }
 
