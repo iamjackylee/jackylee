@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Black/white split background circle -->
+  <circle cx="60" cy="50" r="36" fill="none" stroke="#c9a84c" stroke-width="2.5"/>
+  <!-- Half fill for monochrome effect -->
+  <path d="M60,14 A36,36 0 0,0 60,86 Z" fill="#e8e8e8" opacity="0.15"/>
+  <path d="M60,14 A36,36 0 0,1 60,86 Z" fill="#c9a84c" opacity="0.1"/>
+  <!-- Dividing line -->
+  <line x1="60" y1="14" x2="60" y2="86" stroke="#c9a84c" stroke-width="1"/>
+  <!-- MPA text -->
+  <text x="60" y="56" text-anchor="middle" font-family="Georgia, serif" font-size="24" font-weight="bold" fill="#c9a84c" letter-spacing="3">MPA</text>
+  <!-- Subtitle -->
+  <text x="60" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#e8e8e8" letter-spacing="1.5">MONOCHROME</text>
+  <text x="60" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#e8e8e8" letter-spacing="1.5">AWARDS</text>
+</svg>

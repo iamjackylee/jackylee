@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Scale/balance icon -->
+  <!-- Pillar -->
+  <line x1="60" y1="15" x2="60" y2="55" stroke="#c9a84c" stroke-width="2.5"/>
+  <!-- Base -->
+  <line x1="45" y1="55" x2="75" y2="55" stroke="#c9a84c" stroke-width="2.5"/>
+  <!-- Balance beam -->
+  <line x1="32" y1="22" x2="88" y2="22" stroke="#c9a84c" stroke-width="2"/>
+  <!-- Left pan -->
+  <line x1="32" y1="22" x2="26" y2="40" stroke="#c9a84c" stroke-width="1.5"/>
+  <line x1="32" y1="22" x2="38" y2="40" stroke="#c9a84c" stroke-width="1.5"/>
+  <path d="M24,40 Q32,48 40,40" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+  <!-- Right pan -->
+  <line x1="88" y1="22" x2="82" y2="40" stroke="#c9a84c" stroke-width="1.5"/>
+  <line x1="88" y1="22" x2="94" y2="40" stroke="#c9a84c" stroke-width="1.5"/>
+  <path d="M80,40 Q88,48 96,40" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+  <!-- APJA text -->
+  <text x="60" y="78" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#c9a84c" letter-spacing="2">APJA</text>
+  <!-- Subtitle -->
+  <text x="60" y="94" text-anchor="middle" font-family="Arial, sans-serif" font-size="5.5" fill="#e8e8e8" letter-spacing="1">PHOTOGRAPHIC JUDGES</text>
+</svg>

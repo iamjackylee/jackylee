@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Stylized diamond/building shape -->
+  <path d="M60 12 L88 40 L88 78 L60 108 L32 78 L32 40 Z" fill="none" stroke="#c9a84c" stroke-width="2"/>
+  <!-- Inner cross pattern -->
+  <line x1="60" y1="30" x2="60" y2="90" stroke="#c9a84c" stroke-width="1.2" opacity="0.6"/>
+  <line x1="40" y1="60" x2="80" y2="60" stroke="#c9a84c" stroke-width="1.2" opacity="0.6"/>
+  <!-- CCG text -->
+  <text x="60" y="64" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#c9a84c" letter-spacing="2">CCG</text>
+</svg>

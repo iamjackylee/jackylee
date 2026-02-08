@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Academic shield/crest outline -->
+  <path d="M60,8 L95,22 L95,60 Q95,90 60,112 Q25,90 25,60 L25,22 Z" fill="none" stroke="#c9a84c" stroke-width="2.5"/>
+  <!-- Open book icon -->
+  <path d="M45,42 L60,46 L75,42 L75,62 L60,66 L45,62 Z" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+  <line x1="60" y1="46" x2="60" y2="66" stroke="#c9a84c" stroke-width="1.5"/>
+  <!-- HKU text -->
+  <text x="60" y="88" text-anchor="middle" font-family="Georgia, serif" font-size="24" font-weight="bold" fill="#c9a84c" letter-spacing="3">HKU</text>
+</svg>

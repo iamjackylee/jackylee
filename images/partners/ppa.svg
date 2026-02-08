@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Circle border -->
+  <circle cx="60" cy="52" r="38" fill="none" stroke="#c9a84c" stroke-width="2.5"/>
+  <!-- PPA text -->
+  <text x="60" y="58" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#c9a84c" letter-spacing="2">PPA</text>
+  <!-- Decorative line below -->
+  <line x1="38" y1="66" x2="82" y2="66" stroke="#c9a84c" stroke-width="1.5"/>
+  <!-- Subtitle -->
+  <text x="60" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#e8e8e8" letter-spacing="1">PROFESSIONAL</text>
+  <text x="60" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#e8e8e8" letter-spacing="1">PHOTOGRAPHERS</text>
+</svg>

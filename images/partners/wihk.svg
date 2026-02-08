@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Walking figure -->
+  <circle cx="60" cy="22" r="8" fill="#c9a84c" opacity="0.9"/>
+  <line x1="60" y1="30" x2="60" y2="58" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="60" y1="40" x2="48" y2="50" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+  <line x1="60" y1="40" x2="72" y2="48" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+  <line x1="60" y1="58" x2="48" y2="72" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+  <line x1="60" y1="58" x2="72" y2="72" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+  <!-- WALK text -->
+  <text x="60" y="95" text-anchor="middle" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#c9a84c" letter-spacing="2">WALK</text>
+  <text x="60" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#c9a84c" letter-spacing="1" opacity="0.7">IN HONG KONG</text>
+</svg>

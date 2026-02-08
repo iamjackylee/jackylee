@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Lissajous-inspired circle -->
+  <circle cx="60" cy="55" r="38" fill="none" stroke="#c9a84c" stroke-width="3"/>
+  <!-- Inner Lissajous hint curves -->
+  <ellipse cx="60" cy="55" rx="24" ry="34" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.5" transform="rotate(45 60 55)"/>
+  <ellipse cx="60" cy="55" rx="24" ry="34" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.5" transform="rotate(-45 60 55)"/>
+  <!-- ABC text -->
+  <text x="60" y="61" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#c9a84c" letter-spacing="2">ABC</text>
+  <!-- Subtitle -->
+  <text x="60" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#e8e8e8" letter-spacing="1">AUSTRALIA</text>
+</svg>

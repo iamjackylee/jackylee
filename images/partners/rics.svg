@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Shield shape -->
+  <path d="M60,8 L95,25 L95,62 Q95,85 60,108 Q25,85 25,62 L25,25 Z" fill="none" stroke="#c9a84c" stroke-width="2.5"/>
+  <!-- Inner shield line -->
+  <path d="M60,18 L85,32 L85,60 Q85,78 60,97 Q35,78 35,60 L35,32 Z" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.4"/>
+  <!-- RICS text -->
+  <text x="60" y="62" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#c9a84c" letter-spacing="2">RICS</text>
+</svg>

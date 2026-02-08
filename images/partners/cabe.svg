@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Building icon -->
+  <!-- Main building -->
+  <rect x="40" y="25" width="40" height="45" fill="none" stroke="#c9a84c" stroke-width="2"/>
+  <!-- Roof/pediment -->
+  <polygon points="35,25 60,10 85,25" fill="none" stroke="#c9a84c" stroke-width="2"/>
+  <!-- Columns -->
+  <line x1="50" y1="25" x2="50" y2="70" stroke="#c9a84c" stroke-width="1.5"/>
+  <line x1="60" y1="25" x2="60" y2="70" stroke="#c9a84c" stroke-width="1.5"/>
+  <line x1="70" y1="25" x2="70" y2="70" stroke="#c9a84c" stroke-width="1.5"/>
+  <!-- Base -->
+  <line x1="35" y1="70" x2="85" y2="70" stroke="#c9a84c" stroke-width="2.5"/>
+  <!-- CABE text -->
+  <text x="60" y="92" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#c9a84c" letter-spacing="2">CABE</text>
+</svg>
