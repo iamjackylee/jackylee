@@ -1917,19 +1917,32 @@ p {
   100% { transform: translateX(-50%); }
 }
 
-/* === TESTIMONIAL CARD TRANSITIONS === */
-.testimonial-card {
-  transition: opacity 0.5s ease, transform 0.5s ease, border-color var(--transition-base);
+/* === TESTIMONIAL 3D CARD FLIP === */
+.testimonial-flip {
+  perspective: 1000px;
 }
 
-.testimonial-card--fading-out {
-  opacity: 0;
-  transform: translateY(10px);
+.testimonial-flip__inner {
+  position: relative;
+  transform-style: preserve-3d;
 }
 
-.testimonial-card--fading-in {
-  opacity: 0;
-  transform: translateY(-10px);
+.testimonial-flip--flip-out .testimonial-flip__inner {
+  animation: cardFlipOut 0.35s ease-in forwards;
+}
+
+.testimonial-flip--flip-in .testimonial-flip__inner {
+  animation: cardFlipIn 0.35s ease-out forwards;
+}
+
+@keyframes cardFlipOut {
+  0%   { transform: rotateY(0deg) scale(1); }
+  100% { transform: rotateY(-90deg) scale(0.95); }
+}
+
+@keyframes cardFlipIn {
+  0%   { transform: rotateY(90deg) scale(0.95); }
+  100% { transform: rotateY(0deg) scale(1); }
 }
 
 /* === TESTIMONIAL TYPEWRITER === */

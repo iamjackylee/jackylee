@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const carousel = document.getElementById('testimonials-carousel');
   if (carousel) {
-    const slots = carousel.querySelectorAll('.testimonial-card');
+    const slots = carousel.querySelectorAll('.testimonial-flip');
     let currentIndices = [0, 1, 2, 3];
     let nextToReplace = 0;
     let nextTestimonialIdx = 4;
@@ -212,12 +212,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let startDelayTimer = null;
     let carouselVisible = false;
 
-    // Populate a card slot with a specific testimonial (syncs ALL fields)
-    const populateSlot = (slot, testimonial) => {
-      slot.querySelector('.testimonial-card__quote').textContent = testimonial.quote;
-      slot.querySelector('.testimonial-card__name').textContent = testimonial.name;
-      slot.querySelector('.testimonial-card__role').textContent = testimonial.role;
-      const avatar = slot.querySelector('.testimonial-card__avatar');
+    // Populate a flip container's card with a specific testimonial (syncs ALL fields)
+    const populateSlot = (flipContainer, testimonial) => {
+      const card = flipContainer.querySelector('.testimonial-card');
+      card.querySelector('.testimonial-card__quote').textContent = testimonial.quote;
+      card.querySelector('.testimonial-card__name').textContent = testimonial.name;
+      card.querySelector('.testimonial-card__role').textContent = testimonial.role;
+      const avatar = card.querySelector('.testimonial-card__avatar');
       avatar.src = testimonial.avatar;
       avatar.alt = testimonial.name;
     };
@@ -254,14 +255,15 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Set initial author/avatar data (but leave quotes empty for typewriter)
-    slots.forEach((slot, idx) => {
+    slots.forEach((flipContainer, idx) => {
       const t = allTestimonials[idx];
-      slot.querySelector('.testimonial-card__name').textContent = t.name;
-      slot.querySelector('.testimonial-card__role').textContent = t.role;
-      const avatar = slot.querySelector('.testimonial-card__avatar');
+      const card = flipContainer.querySelector('.testimonial-card');
+      card.querySelector('.testimonial-card__name').textContent = t.name;
+      card.querySelector('.testimonial-card__role').textContent = t.role;
+      const avatar = card.querySelector('.testimonial-card__avatar');
       avatar.src = t.avatar;
       avatar.alt = t.name;
-      slot.querySelector('.testimonial-card__quote').textContent = '';
+      card.querySelector('.testimonial-card__quote').textContent = '';
     });
 
     let hasPlayedInitial = false;
@@ -270,39 +272,41 @@ document.addEventListener('DOMContentLoaded', () => {
     const playInitialTypewriter = () => {
       if (hasPlayedInitial) return;
       hasPlayedInitial = true;
-      slots.forEach((slot, idx) => {
-        const quoteEl = slot.querySelector('.testimonial-card__quote');
+      slots.forEach((flipContainer, idx) => {
+        const quoteEl = flipContainer.querySelector('.testimonial-card__quote');
         const text = allTestimonials[currentIndices[idx]].quote;
         setTimeout(() => typewriteQuote(quoteEl, text), idx * 600);
       });
     };
 
-    // Rotate one card at a time
+    // Rotate one card at a time with 3D flip
     const rotateNextCard = () => {
-      const slot = slots[nextToReplace];
+      const flipContainer = slots[nextToReplace];
       const testimonial = allTestimonials[nextTestimonialIdx];
 
-      slot.classList.add('testimonial-card--fading-out');
+      // Phase 1: Flip out — card rotates to edge-on (90deg)
+      flipContainer.classList.add('testimonial-flip--flip-out');
 
       setTimeout(() => {
-        populateSlot(slot, testimonial);
-        const quoteEl = slot.querySelector('.testimonial-card__quote');
+        // At midpoint: card is edge-on, swap all content
+        populateSlot(flipContainer, testimonial);
+        const quoteEl = flipContainer.querySelector('.testimonial-card__quote');
         quoteEl.textContent = '';
         quoteEl.classList.remove('typewriter--active', 'typewriter--done');
 
-        slot.classList.remove('testimonial-card--fading-out');
-        slot.classList.add('testimonial-card--fading-in');
+        // Phase 2: Flip in — card rotates back from opposite side
+        flipContainer.classList.remove('testimonial-flip--flip-out');
+        flipContainer.classList.add('testimonial-flip--flip-in');
 
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            slot.classList.remove('testimonial-card--fading-in');
-            typewriteQuote(quoteEl, testimonial.quote);
-          });
-        });
+        setTimeout(() => {
+          // Cleanup and start typewriter
+          flipContainer.classList.remove('testimonial-flip--flip-in');
+          typewriteQuote(quoteEl, testimonial.quote);
+        }, 350);
 
         currentIndices[nextToReplace] = nextTestimonialIdx;
         advanceIndices();
-      }, 600);
+      }, 350);
     };
 
     // Advance to next slot and testimonial index
