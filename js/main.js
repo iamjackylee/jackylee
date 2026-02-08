@@ -142,38 +142,167 @@ document.addEventListener('DOMContentLoaded', () => {
 
   statNumbers.forEach(el => counterObserver.observe(el));
 
-  // --- Testimonial Typewriter Effect ---
-  const testimonialQuotes = document.querySelectorAll('.testimonial-card__quote');
-  const typewriterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const fullText = el.dataset.text || el.textContent;
-        el.dataset.text = fullText;
-        el.textContent = '';
-        el.classList.add('typewriter--active');
+  // --- Testimonial Carousel with Typewriter ---
+  const allTestimonials = [
+    {
+      quote: "Your knowledge and professional acumen have greatly contributed to setting the high standard and the rigorous judging framework that were central to the contest's success.",
+      name: "Dr. Benoit Guenard",
+      role: "Director, Hong Kong Biodiversity Museum",
+      avatar: "images/testimonials/benoit-guenard.jpg"
+    },
+    {
+      quote: "The art photo galleries, showcasing the gorgeous natural scenery and city landscape of Hong Kong, was well received by the visitors in the art revitalization project.",
+      name: "Charles Lee",
+      role: "Chairperson, Association for Sha Tau Kok Cultural and Ecology",
+      avatar: "images/testimonials/charles-lee.jpg"
+    },
+    {
+      quote: "I must congratulate you, Jacky, on the excellent images on your website. You have some beautiful work there. We're really impressed.",
+      name: "Elaine Herbert",
+      role: "Royal Photographic Society President's Medal Recipient 2025",
+      avatar: "images/testimonials/elaine-herbert.jpg"
+    },
+    {
+      quote: "Thank you for your enthusiasm to participate in our organization. You are just the kind of member we are looking for. Congratulations on your achievements and honours!",
+      name: "Kay Larkin",
+      role: "President, International Association of Panoramic Photographers",
+      avatar: "images/testimonials/kay-larkin.jpg"
+    },
+    {
+      quote: "With your possession of good knowledge and sound experience in drone photography, I firmly believe that the aforementioned topic would be of interest to our members who will find pleasure in reading your sharing.",
+      name: "Dr. Michael Mui",
+      role: "Editor-in-Chief, Newsletter Editorial Board, Hong Kong Dental Association",
+      avatar: "images/testimonials/michael-mui.jpg"
+    },
+    {
+      quote: "You had been generously sharing your knowledge and time in guiding the public on how to capture the historic sites in Central, Hong Kong from an artistic point of view.",
+      name: "Paul Chan",
+      role: "CEO, Walk in Hong Kong",
+      avatar: "images/testimonials/paul-chan.jpg"
+    },
+    {
+      quote: "Team PSA is extremely impressed with your profile and would like to welcome you among our distinguished Mentors.",
+      name: "Sanjoy Sengupta",
+      role: "Director, Consultant Services, Photographic Society of America",
+      avatar: "images/testimonials/sanjoy-sengupta.jpg"
+    },
+    {
+      quote: "Your expertise was instrumental in the campaign's resounding success. Your selection of photographs that captured the village's essence not only showcased your artistic talent but also amplified our efforts to promote the conservation of cultural heritage.",
+      name: "Sylvia Chung",
+      role: "Chief Business Impact Officer, Chinachem Group",
+      avatar: "images/testimonials/sylvia-chung-yt-wong.jpg"
+    },
+    {
+      quote: "The seminar was well received by our course students. The information and skills you have shared with them were fascinating and inspirational.",
+      name: "Dr. Y.T. Wong",
+      role: "Course Coordinator, School of Chinese, The University of Hong Kong",
+      avatar: "images/partners/hku.jpg"
+    }
+  ];
 
-        let i = 0;
-        const speed = 25; // ms per character
+  const carousel = document.getElementById('testimonials-carousel');
+  if (carousel) {
+    const slots = carousel.querySelectorAll('.testimonial-card');
+    let currentIndices = [0, 1, 2, 3]; // Which testimonials are showing in each slot
+    let nextToReplace = 0; // Which slot to replace next
+    let nextTestimonialIdx = 4; // Next testimonial from pool
+    let carouselStarted = false;
+    let carouselInterval = null;
 
-        const type = () => {
-          if (i < fullText.length) {
-            el.textContent += fullText.charAt(i);
-            i++;
-            setTimeout(type, speed);
-          } else {
-            el.classList.remove('typewriter--active');
-            el.classList.add('typewriter--done');
-          }
-        };
+    // Typewriter function for a single quote element
+    const typewriteQuote = (quoteEl, text) => {
+      quoteEl.textContent = '';
+      quoteEl.classList.remove('typewriter--done');
+      quoteEl.classList.add('typewriter--active');
 
-        type();
-        typewriterObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 0.3 });
+      let i = 0;
+      const speed = 20;
 
-  testimonialQuotes.forEach(el => typewriterObserver.observe(el));
+      const type = () => {
+        if (i < text.length) {
+          quoteEl.textContent += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        } else {
+          quoteEl.classList.remove('typewriter--active');
+          quoteEl.classList.add('typewriter--done');
+        }
+      };
+      type();
+    };
+
+    // Run initial typewriter on all 4 visible cards
+    const typewriteInitial = () => {
+      slots.forEach((card, idx) => {
+        const quoteEl = card.querySelector('.testimonial-card__quote');
+        const text = allTestimonials[idx].quote;
+        setTimeout(() => typewriteQuote(quoteEl, text), idx * 800);
+      });
+    };
+
+    // Rotate one card
+    const rotateNextCard = () => {
+      const slot = slots[nextToReplace];
+      const testimonial = allTestimonials[nextTestimonialIdx];
+
+      // Fade out
+      slot.classList.add('testimonial-card--fading-out');
+
+      setTimeout(() => {
+        // Update content
+        const quoteEl = slot.querySelector('.testimonial-card__quote');
+        const nameEl = slot.querySelector('.testimonial-card__name');
+        const roleEl = slot.querySelector('.testimonial-card__role');
+        const avatarEl = slot.querySelector('.testimonial-card__avatar');
+
+        nameEl.textContent = testimonial.name;
+        roleEl.textContent = testimonial.role;
+        avatarEl.src = testimonial.avatar;
+        avatarEl.alt = testimonial.name;
+        quoteEl.textContent = '';
+        quoteEl.classList.remove('typewriter--active', 'typewriter--done');
+
+        // Switch to fade-in state
+        slot.classList.remove('testimonial-card--fading-out');
+        slot.classList.add('testimonial-card--fading-in');
+
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            slot.classList.remove('testimonial-card--fading-in');
+            // Typewriter the new quote
+            typewriteQuote(quoteEl, testimonial.quote);
+          });
+        });
+
+        // Update tracking
+        currentIndices[nextToReplace] = nextTestimonialIdx;
+        nextToReplace = (nextToReplace + 1) % 4;
+        nextTestimonialIdx = (nextTestimonialIdx + 1) % allTestimonials.length;
+
+        // Skip if next testimonial is already visible
+        while (currentIndices.includes(nextTestimonialIdx)) {
+          nextTestimonialIdx = (nextTestimonialIdx + 1) % allTestimonials.length;
+        }
+      }, 500);
+    };
+
+    // Start carousel when section comes into view
+    const carouselObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !carouselStarted) {
+          carouselStarted = true;
+          typewriteInitial();
+          // Start rotating after initial typewriter completes (~8 seconds)
+          setTimeout(() => {
+            carouselInterval = setInterval(rotateNextCard, 6000);
+          }, 8000);
+          carouselObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    carouselObserver.observe(carousel);
+  }
 
   // --- Gallery Card 3D Tilt Effect ---
   const cards = document.querySelectorAll('.card');

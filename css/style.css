@@ -994,7 +994,7 @@ p {
 /* --- Testimonial Cards Grid --- */
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-lg);
 }
 
@@ -1882,6 +1882,21 @@ p {
 @keyframes marqueeScroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+/* === TESTIMONIAL CARD TRANSITIONS === */
+.testimonial-card {
+  transition: opacity 0.5s ease, transform 0.5s ease, border-color var(--transition-base);
+}
+
+.testimonial-card--fading-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.testimonial-card--fading-in {
+  opacity: 0;
+  transform: translateY(-10px);
 }
 
 /* === TESTIMONIAL TYPEWRITER === */

@@ -329,11 +329,36 @@
       <div class="text-center mb-4 animate-in">
         <span class="subtitle">Testimonials</span>
         <h2>Words of Affirmation</h2>
-        <p class="lead" style="max-width: 700px; margin: var(--spacing-md) auto 0;">Discover genuine testimonials from collaborators, clients, and peers. Each endorsement provides a unique perspective on Jacky's impact in the world of visual art and photography.</p>
+        <p class="lead" style="max-width: 700px; margin: var(--spacing-md) auto 0;">Genuine testimonials from collaborators, clients and peers &mdash; each offering a unique perspective on Jacky's impact in the world of visual art and photography.</p>
       </div>
 
-      <div class="testimonials-grid">
-        <div class="testimonial-card animate-in animate-in--delay-1">
+      <div class="testimonials-grid animate-in" id="testimonials-carousel">
+        <!-- Slot 0 -->
+        <div class="testimonial-card" data-slot="0">
+          <div class="testimonial-card__quote">Your knowledge and professional acumen have greatly contributed to setting the high standard and the rigorous judging framework that were central to the contest's success.</div>
+          <div class="testimonial-card__author">
+            <img src="images/testimonials/benoit-guenard.jpg" alt="Dr. Benoit Guenard" class="testimonial-card__avatar" loading="lazy">
+            <div>
+              <div class="testimonial-card__name">Dr. Benoit Guenard</div>
+              <div class="testimonial-card__role">Director, Hong Kong Biodiversity Museum</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slot 1 -->
+        <div class="testimonial-card" data-slot="1">
+          <div class="testimonial-card__quote">The art photo galleries, showcasing the gorgeous natural scenery and city landscape of Hong Kong, was well received by the visitors in the art revitalization project.</div>
+          <div class="testimonial-card__author">
+            <img src="images/testimonials/charles-lee.jpg" alt="Charles Lee" class="testimonial-card__avatar" loading="lazy">
+            <div>
+              <div class="testimonial-card__name">Charles Lee</div>
+              <div class="testimonial-card__role">Chairperson, Association for Sha Tau Kok Cultural and Ecology</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slot 2 -->
+        <div class="testimonial-card" data-slot="2">
           <div class="testimonial-card__quote">I must congratulate you, Jacky, on the excellent images on your website. You have some beautiful work there. We're really impressed.</div>
           <div class="testimonial-card__author">
             <img src="images/testimonials/elaine-herbert.jpg" alt="Elaine Herbert" class="testimonial-card__avatar" loading="lazy">
@@ -344,28 +369,19 @@
           </div>
         </div>
 
-        <div class="testimonial-card animate-in animate-in--delay-2">
-          <div class="testimonial-card__quote">Team PSA is extremely impressed with your profile and would like to welcome you among our distinguished Mentors.</div>
+        <!-- Slot 3 -->
+        <div class="testimonial-card" data-slot="3">
+          <div class="testimonial-card__quote">Thank you for your enthusiasm to participate in our organization. You are just the kind of member we are looking for. Congratulations on your achievements and honours!</div>
           <div class="testimonial-card__author">
-            <img src="images/testimonials/sanjoy-sengupta.jpg" alt="Sanjoy Sengupta" class="testimonial-card__avatar" loading="lazy">
+            <img src="images/testimonials/kay-larkin.jpg" alt="Kay Larkin" class="testimonial-card__avatar" loading="lazy">
             <div>
-              <div class="testimonial-card__name">Sanjoy Sengupta</div>
-              <div class="testimonial-card__role">Director, Consultant Services, Photographic Society of America</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card animate-in animate-in--delay-3">
-          <div class="testimonial-card__quote">Your expertise was instrumental in the campaign's resounding success. Your selection of photographs that captured the village's essence not only showcased your artistic talent but also amplified our efforts to promote the conservation of cultural heritage.</div>
-          <div class="testimonial-card__author">
-            <img src="images/testimonials/sylvia-chung-yt-wong.jpg" alt="Sylvia Chung" class="testimonial-card__avatar" loading="lazy">
-            <div>
-              <div class="testimonial-card__name">Sylvia Chung</div>
-              <div class="testimonial-card__role">Chief Business Impact Officer, Chinachem Group</div>
+              <div class="testimonial-card__name">Kay Larkin</div>
+              <div class="testimonial-card__role">President, International Association of Panoramic Photographers</div>
             </div>
           </div>
         </div>
       </div>
+
       <div class="text-center mt-3 animate-in">
         <a href="about.html#testimonials" class="btn btn--ghost">Read All Testimonials <span class="btn__arrow">&rarr;</span></a>
       </div>
