@@ -107,12 +107,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Animated Number Counters ---
+  // --- Animated Number Counters (re-animates on scroll back) ---
   const statNumbers = document.querySelectorAll('.stat__number[data-count]');
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
+      const el = entry.target;
       if (entry.isIntersecting) {
-        const el = entry.target;
         const target = parseInt(el.dataset.count, 10);
         const suffix = el.dataset.suffix || '';
         const duration = 2000;
@@ -135,7 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         requestAnimationFrame(animate);
-        counterObserver.unobserve(el);
+      } else {
+        // Reset to 0 when scrolled away so it re-counts next time
+        el.textContent = '0';
       }
     });
   }, { threshold: 0.3 });
@@ -203,11 +205,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const carousel = document.getElementById('testimonials-carousel');
   if (carousel) {
     const slots = carousel.querySelectorAll('.testimonial-card');
-    let currentIndices = [0, 1, 2, 3]; // Which testimonials are showing in each slot
-    let nextToReplace = 0; // Which slot to replace next
-    let nextTestimonialIdx = 4; // Next testimonial from pool
+    let currentIndices = [0, 1, 2, 3];
+    let nextToReplace = 0;
+    let nextTestimonialIdx = 4;
     let carouselStarted = false;
-    let carouselInterval = null;
+
+    // Populate a card slot with a specific testimonial (syncs ALL fields)
+    const populateSlot = (slot, testimonial) => {
+      slot.querySelector('.testimonial-card__quote').textContent = testimonial.quote;
+      slot.querySelector('.testimonial-card__name').textContent = testimonial.name;
+      slot.querySelector('.testimonial-card__role').textContent = testimonial.role;
+      const avatar = slot.querySelector('.testimonial-card__avatar');
+      avatar.src = testimonial.avatar;
+      avatar.alt = testimonial.name;
+    };
 
     // Typewriter function for a single quote element
     const typewriteQuote = (quoteEl, text) => {
@@ -231,71 +242,59 @@ document.addEventListener('DOMContentLoaded', () => {
       type();
     };
 
-    // Run initial typewriter on all 4 visible cards
-    const typewriteInitial = () => {
-      slots.forEach((card, idx) => {
-        const quoteEl = card.querySelector('.testimonial-card__quote');
-        const text = allTestimonials[idx].quote;
-        setTimeout(() => typewriteQuote(quoteEl, text), idx * 800);
-      });
-    };
+    // Ensure initial HTML matches the JS data exactly
+    slots.forEach((slot, idx) => populateSlot(slot, allTestimonials[idx]));
 
-    // Rotate one card
+    // Rotate one card at a time
     const rotateNextCard = () => {
       const slot = slots[nextToReplace];
       const testimonial = allTestimonials[nextTestimonialIdx];
 
-      // Fade out
+      // Fade out entire card
       slot.classList.add('testimonial-card--fading-out');
 
       setTimeout(() => {
-        // Update content
+        // Update ALL content while card is invisible
+        populateSlot(slot, testimonial);
         const quoteEl = slot.querySelector('.testimonial-card__quote');
-        const nameEl = slot.querySelector('.testimonial-card__name');
-        const roleEl = slot.querySelector('.testimonial-card__role');
-        const avatarEl = slot.querySelector('.testimonial-card__avatar');
-
-        nameEl.textContent = testimonial.name;
-        roleEl.textContent = testimonial.role;
-        avatarEl.src = testimonial.avatar;
-        avatarEl.alt = testimonial.name;
         quoteEl.textContent = '';
         quoteEl.classList.remove('typewriter--active', 'typewriter--done');
 
-        // Switch to fade-in state
+        // Fade in
         slot.classList.remove('testimonial-card--fading-out');
         slot.classList.add('testimonial-card--fading-in');
 
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
             slot.classList.remove('testimonial-card--fading-in');
-            // Typewriter the new quote
+            // Typewriter the quote after card is visible
             typewriteQuote(quoteEl, testimonial.quote);
           });
         });
 
-        // Update tracking
+        // Advance indices
         currentIndices[nextToReplace] = nextTestimonialIdx;
         nextToReplace = (nextToReplace + 1) % 4;
         nextTestimonialIdx = (nextTestimonialIdx + 1) % allTestimonials.length;
 
-        // Skip if next testimonial is already visible
-        while (currentIndices.includes(nextTestimonialIdx)) {
+        // Skip already-visible testimonials
+        let safetyCount = 0;
+        while (currentIndices.includes(nextTestimonialIdx) && safetyCount < allTestimonials.length) {
           nextTestimonialIdx = (nextTestimonialIdx + 1) % allTestimonials.length;
+          safetyCount++;
         }
-      }, 500);
+      }, 600); // Wait for fade-out to finish
     };
 
-    // Start carousel when section comes into view
+    // Start carousel when section scrolls into view
     const carouselObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting && !carouselStarted) {
           carouselStarted = true;
-          typewriteInitial();
-          // Start rotating after initial typewriter completes (~8 seconds)
+          // Start rotating after a short viewing pause
           setTimeout(() => {
-            carouselInterval = setInterval(rotateNextCard, 6000);
-          }, 8000);
+            setInterval(rotateNextCard, 6000);
+          }, 4000);
           carouselObserver.unobserve(entry.target);
         }
       });
@@ -337,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (entry.isIntersecting) {
           // Add staggered delay for child elements within grids
           const parent = entry.target;
-          const staggerChildren = parent.querySelectorAll('.card, .award-card, .testimonial-card, .stat, .partner-logo');
+          const staggerChildren = parent.querySelectorAll('.card, .award-card, .stat');
 
           if (staggerChildren.length > 0) {
             staggerChildren.forEach((child, index) => {

@@ -1849,7 +1849,7 @@ p {
   align-items: center;
   gap: var(--spacing-3xl);
   width: max-content;
-  animation: marqueeScroll 30s linear infinite;
+  animation: marqueeScroll 60s linear infinite;
 }
 
 .marquee:hover .marquee__track {
@@ -1877,6 +1877,39 @@ p {
   filter: grayscale(0%) brightness(1);
   opacity: 1;
   transform: scale(1.1);
+}
+
+/* Marquee hover tooltip */
+.marquee__item[data-collab] {
+  position: relative;
+}
+
+.marquee__item[data-collab]::after {
+  content: attr(data-collab);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--color-bg-secondary);
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: var(--shadow-md);
+}
+
+.marquee__item[data-collab]:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 @keyframes marqueeScroll {
