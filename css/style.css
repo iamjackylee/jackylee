@@ -380,12 +380,14 @@ p {
   position: absolute;
   inset: 0;
   z-index: 0;
+  background-color: var(--color-bg);
 }
 
 .hero__bg img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
 }
 
 .hero__overlay {
@@ -734,8 +736,8 @@ p {
 /* --- Stats --- */
 .stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: var(--spacing-2xl);
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--spacing-xl);
   text-align: center;
 }
 
@@ -1782,7 +1784,7 @@ p {
   }
 
   .stats {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .testimonials-grid {
@@ -1817,7 +1819,7 @@ p {
   }
 
   .stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .partners-grid {
@@ -1831,6 +1833,74 @@ p {
   .trusted-logos {
     gap: var(--spacing-md);
   }
+}
+
+/* === PARTNER LOGO MARQUEE === */
+.marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.marquee__track {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3xl);
+  width: max-content;
+  animation: marqueeScroll 30s linear infinite;
+}
+
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+.marquee__item {
+  flex-shrink: 0;
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marquee__item img {
+  max-width: 120px;
+  max-height: 80px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.8);
+  opacity: 0.6;
+  transition: all var(--transition-base);
+}
+
+.marquee__item:hover img {
+  filter: grayscale(0%) brightness(1);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* === TESTIMONIAL TYPEWRITER === */
+.testimonial-card__quote.typewriter--active::after {
+  content: '|';
+  color: var(--color-accent);
+  font-style: normal;
+  font-weight: 300;
+  animation: blinkCursor 0.7s step-end infinite;
+  margin-left: 2px;
+}
+
+.testimonial-card__quote.typewriter--done::after {
+  content: none;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 /* === SCROLL PROGRESS INDICATOR === */
@@ -1893,15 +1963,7 @@ p {
   border-radius: 2px;
 }
 
-.split__content h2::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-accent), #e8d5a0);
-  margin: var(--spacing-md) 0 0;
-  border-radius: 2px;
-}
+/* No h2::after for split sections — they use a manual .divider element */
 
 /* === GLOWING BORDER ON HOVER === */
 .award-card:hover {

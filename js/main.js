@@ -71,14 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Hero Parallax Effect ---
-  const heroImg = document.querySelector('.hero__bg img');
-  if (heroImg) {
+  const heroBg = document.querySelector('.hero__bg');
+  if (heroBg) {
     let ticking = false;
     const parallax = () => {
       const scrolled = window.scrollY;
       const heroHeight = document.querySelector('.hero').offsetHeight;
       if (scrolled < heroHeight) {
-        heroImg.style.transform = `translateY(${scrolled * 0.35}px) scale(1.1)`;
+        heroBg.style.transform = `translateY(${scrolled * 0.3}px)`;
       }
       ticking = false;
     };
@@ -90,9 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, { passive: true });
 
-    // Set initial scale
-    heroImg.style.transform = 'translateY(0) scale(1.1)';
-    heroImg.style.transition = 'none';
+    heroBg.style.transition = 'none';
   }
 
   // --- Hero Mouse-Follow Glow ---
@@ -143,6 +141,39 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.3 });
 
   statNumbers.forEach(el => counterObserver.observe(el));
+
+  // --- Testimonial Typewriter Effect ---
+  const testimonialQuotes = document.querySelectorAll('.testimonial-card__quote');
+  const typewriterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const fullText = el.dataset.text || el.textContent;
+        el.dataset.text = fullText;
+        el.textContent = '';
+        el.classList.add('typewriter--active');
+
+        let i = 0;
+        const speed = 25; // ms per character
+
+        const type = () => {
+          if (i < fullText.length) {
+            el.textContent += fullText.charAt(i);
+            i++;
+            setTimeout(type, speed);
+          } else {
+            el.classList.remove('typewriter--active');
+            el.classList.add('typewriter--done');
+          }
+        };
+
+        type();
+        typewriterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  testimonialQuotes.forEach(el => typewriterObserver.observe(el));
 
   // --- Gallery Card 3D Tilt Effect ---
   const cards = document.querySelectorAll('.card');
@@ -266,15 +297,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Typing Effect for Hero Subtitle (subtle) ---
-  const heroSubtitle = document.querySelector('.hero__subtitle');
-  if (heroSubtitle) {
-    heroSubtitle.style.borderRight = '2px solid var(--color-accent)';
-    heroSubtitle.style.animation = 'none';
-
-    // Remove cursor after a delay
-    setTimeout(() => {
-      heroSubtitle.style.borderRight = 'none';
-    }, 3000);
-  }
 });
