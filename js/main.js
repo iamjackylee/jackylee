@@ -57,12 +57,143 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Scroll animations ---
+  // --- Scroll Progress Indicator ---
+  const scrollProgress = document.querySelector('.scroll-progress');
+  if (scrollProgress) {
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      scrollProgress.style.width = progress + '%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  }
+
+  // --- Hero Parallax Effect ---
+  const heroImg = document.querySelector('.hero__bg img');
+  if (heroImg) {
+    let ticking = false;
+    const parallax = () => {
+      const scrolled = window.scrollY;
+      const heroHeight = document.querySelector('.hero').offsetHeight;
+      if (scrolled < heroHeight) {
+        heroImg.style.transform = `translateY(${scrolled * 0.35}px) scale(1.1)`;
+      }
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(parallax);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Set initial scale
+    heroImg.style.transform = 'translateY(0) scale(1.1)';
+    heroImg.style.transition = 'none';
+  }
+
+  // --- Hero Mouse-Follow Glow ---
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    const glow = document.createElement('div');
+    glow.classList.add('hero__glow');
+    hero.appendChild(glow);
+
+    hero.addEventListener('mousemove', (e) => {
+      const rect = hero.getBoundingClientRect();
+      glow.style.left = (e.clientX - rect.left) + 'px';
+      glow.style.top = (e.clientY - rect.top) + 'px';
+    });
+  }
+
+  // --- Animated Number Counters ---
+  const statNumbers = document.querySelectorAll('.stat__number[data-count]');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.count, 10);
+        const suffix = el.dataset.suffix || '';
+        const duration = 2000;
+        const start = performance.now();
+
+        const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
+
+        const animate = (now) => {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const easedProgress = easeOutQuart(progress);
+          const current = Math.floor(easedProgress * target);
+          el.textContent = current.toLocaleString() + suffix;
+
+          if (progress < 1) {
+            requestAnimationFrame(animate);
+          } else {
+            el.textContent = target.toLocaleString() + suffix;
+          }
+        };
+
+        requestAnimationFrame(animate);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  statNumbers.forEach(el => counterObserver.observe(el));
+
+  // --- Gallery Card 3D Tilt Effect ---
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -5;
+      const rotateY = ((x - centerX) / centerX) * 5;
+
+      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
+      card.style.transition = 'transform 0.5s ease';
+    });
+
+    card.addEventListener('mouseenter', () => {
+      card.style.transition = 'transform 0.1s ease';
+    });
+  });
+
+  // --- Staggered Scroll-Triggered Reveal Animations ---
   const animateElements = document.querySelectorAll('.animate-in');
   if (animateElements.length > 0) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          // Add staggered delay for child elements within grids
+          const parent = entry.target;
+          const staggerChildren = parent.querySelectorAll('.card, .award-card, .testimonial-card, .stat, .partner-logo');
+
+          if (staggerChildren.length > 0) {
+            staggerChildren.forEach((child, index) => {
+              child.style.opacity = '0';
+              child.style.transform = 'translateY(20px)';
+              child.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+
+              requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                  child.style.opacity = '1';
+                  child.style.transform = 'translateY(0)';
+                });
+              });
+            });
+          }
+
           entry.target.classList.add('animate-in--visible');
           observer.unobserve(entry.target);
         }
@@ -115,4 +246,35 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // --- Magnetic Effect on CTA Buttons ---
+  document.querySelectorAll('.cta-section .btn--primary').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px) translateY(-2px)`;
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = 'translate(0, 0) translateY(0)';
+      btn.style.transition = 'transform 0.3s ease';
+    });
+
+    btn.addEventListener('mouseenter', () => {
+      btn.style.transition = 'transform 0.1s ease';
+    });
+  });
+
+  // --- Typing Effect for Hero Subtitle (subtle) ---
+  const heroSubtitle = document.querySelector('.hero__subtitle');
+  if (heroSubtitle) {
+    heroSubtitle.style.borderRight = '2px solid var(--color-accent)';
+    heroSubtitle.style.animation = 'none';
+
+    // Remove cursor after a delay
+    setTimeout(() => {
+      heroSubtitle.style.borderRight = 'none';
+    }, 3000);
+  }
 });
