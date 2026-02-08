@@ -208,7 +208,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndices = [0, 1, 2, 3];
     let nextToReplace = 0;
     let nextTestimonialIdx = 4;
-    let carouselStarted = false;
+    let carouselInterval = null;
+    let carouselVisible = false;
+    let activeTypewriters = []; // track active typewriter timers
 
     // Populate a card slot with a specific testimonial (syncs ALL fields)
     const populateSlot = (slot, testimonial) => {
@@ -220,7 +222,13 @@ document.addEventListener('DOMContentLoaded', () => {
       avatar.alt = testimonial.name;
     };
 
-    // Typewriter function for a single quote element
+    // Cancel all running typewriter animations
+    const cancelTypewriters = () => {
+      activeTypewriters.forEach(id => clearTimeout(id));
+      activeTypewriters = [];
+    };
+
+    // Typewriter function with cancellable timer tracking
     const typewriteQuote = (quoteEl, text) => {
       quoteEl.textContent = '';
       quoteEl.classList.remove('typewriter--done');
@@ -230,10 +238,18 @@ document.addEventListener('DOMContentLoaded', () => {
       const speed = 20;
 
       const type = () => {
+        if (!carouselVisible) {
+          // Section scrolled away — show full text immediately and stop
+          quoteEl.textContent = text;
+          quoteEl.classList.remove('typewriter--active');
+          quoteEl.classList.add('typewriter--done');
+          return;
+        }
         if (i < text.length) {
           quoteEl.textContent += text.charAt(i);
           i++;
-          setTimeout(type, speed);
+          const timerId = setTimeout(type, speed);
+          activeTypewriters.push(timerId);
         } else {
           quoteEl.classList.remove('typewriter--active');
           quoteEl.classList.add('typewriter--done');
@@ -247,13 +263,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Rotate one card at a time
     const rotateNextCard = () => {
+      if (!carouselVisible) return;
+
       const slot = slots[nextToReplace];
       const testimonial = allTestimonials[nextTestimonialIdx];
 
       // Fade out entire card
       slot.classList.add('testimonial-card--fading-out');
 
-      setTimeout(() => {
+      const fadeTimer = setTimeout(() => {
         // Update ALL content while card is invisible
         populateSlot(slot, testimonial);
         const quoteEl = slot.querySelector('.testimonial-card__quote');
@@ -283,22 +301,50 @@ document.addEventListener('DOMContentLoaded', () => {
           nextTestimonialIdx = (nextTestimonialIdx + 1) % allTestimonials.length;
           safetyCount++;
         }
-      }, 600); // Wait for fade-out to finish
+      }, 600);
+      activeTypewriters.push(fadeTimer);
     };
 
-    // Start carousel when section scrolls into view
+    // Start the rotation interval
+    const startCarousel = () => {
+      if (carouselInterval) return;
+      carouselInterval = setInterval(rotateNextCard, 6000);
+    };
+
+    // Pause the rotation and finish any in-progress typewriters instantly
+    const pauseCarousel = () => {
+      if (carouselInterval) {
+        clearInterval(carouselInterval);
+        carouselInterval = null;
+      }
+      cancelTypewriters();
+      // Show full text for any partially typed quotes
+      slots.forEach((slot, idx) => {
+        const quoteEl = slot.querySelector('.testimonial-card__quote');
+        const testimonial = allTestimonials[currentIndices[idx]];
+        if (quoteEl.classList.contains('typewriter--active')) {
+          quoteEl.textContent = testimonial.quote;
+          quoteEl.classList.remove('typewriter--active');
+          quoteEl.classList.add('typewriter--done');
+        }
+        // Clear any fading classes
+        slot.classList.remove('testimonial-card--fading-out', 'testimonial-card--fading-in');
+      });
+    };
+
+    // Observe visibility: pause when hidden, resume when visible
     const carouselObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting && !carouselStarted) {
-          carouselStarted = true;
-          // Start rotating after a short viewing pause
-          setTimeout(() => {
-            setInterval(rotateNextCard, 6000);
-          }, 4000);
-          carouselObserver.unobserve(entry.target);
+        if (entry.isIntersecting) {
+          carouselVisible = true;
+          // Small delay before starting to let user see current cards
+          setTimeout(startCarousel, 3000);
+        } else {
+          carouselVisible = false;
+          pauseCarousel();
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.15 });
 
     carouselObserver.observe(carousel);
   }
