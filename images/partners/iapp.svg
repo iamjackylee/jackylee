@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Panorama wide frame -->
+  <rect x="8" y="28" width="104" height="44" rx="3" fill="none" stroke="#c9a84c" stroke-width="2.5"/>
+  <!-- Inner frame -->
+  <rect x="14" y="33" width="92" height="34" rx="2" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/>
+  <!-- Mountain panorama silhouette inside -->
+  <polyline points="14,60 28,42 40,52 55,38 70,48 85,36 106,55 106,60" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.6"/>
+  <!-- IAPP text -->
+  <text x="60" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#c9a84c" letter-spacing="2">IAPP</text>
+</svg>

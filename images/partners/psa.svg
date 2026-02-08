@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Star -->
+  <polygon points="60,8 67,30 90,30 72,44 78,66 60,52 42,66 48,44 30,30 53,30" fill="#c9a84c" opacity="0.9"/>
+  <!-- PSA text -->
+  <text x="60" y="90" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="bold" fill="#c9a84c" letter-spacing="3">PSA</text>
+  <!-- Underline -->
+  <line x1="25" y1="97" x2="95" y2="97" stroke="#c9a84c" stroke-width="1.5"/>
+</svg>

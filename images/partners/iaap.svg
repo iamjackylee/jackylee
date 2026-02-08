@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Globe circle -->
+  <circle cx="60" cy="42" r="28" fill="none" stroke="#c9a84c" stroke-width="2"/>
+  <!-- Globe lines -->
+  <ellipse cx="60" cy="42" rx="14" ry="28" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.5"/>
+  <line x1="32" y1="42" x2="88" y2="42" stroke="#c9a84c" stroke-width="1" opacity="0.5"/>
+  <ellipse cx="60" cy="42" rx="28" ry="10" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.3"/>
+  <!-- Camera lens on globe -->
+  <circle cx="72" cy="34" r="10" fill="none" stroke="#c9a84c" stroke-width="2"/>
+  <circle cx="72" cy="34" r="6" fill="none" stroke="#c9a84c" stroke-width="1"/>
+  <circle cx="72" cy="34" r="3" fill="#c9a84c" opacity="0.4"/>
+  <!-- IAAP text -->
+  <text x="60" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#c9a84c" letter-spacing="2">IAAP</text>
+  <!-- Subtitle -->
+  <text x="60" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-size="5" fill="#e8e8e8" letter-spacing="1">ART PHOTOGRAPHERS</text>
+</svg>

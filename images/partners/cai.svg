@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Shield shape -->
+  <path d="M60,10 L92,28 L92,58 Q92,82 60,105 Q28,82 28,58 L28,28 Z" fill="none" stroke="#c9a84c" stroke-width="2.5"/>
+  <!-- Checkmark -->
+  <polyline points="42,55 55,70 78,40" fill="none" stroke="#c9a84c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- CAI text -->
+  <text x="60" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#c9a84c" letter-spacing="2">CAI</text>
+</svg>

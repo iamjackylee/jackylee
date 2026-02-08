@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Southern Cross stars (simplified - 4 main stars) -->
+  <circle cx="60" cy="14" r="2.5" fill="#c9a84c"/>
+  <circle cx="72" cy="24" r="2" fill="#c9a84c"/>
+  <circle cx="60" cy="38" r="2.5" fill="#c9a84c"/>
+  <circle cx="48" cy="24" r="2" fill="#c9a84c"/>
+  <circle cx="66" cy="30" r="1.5" fill="#c9a84c"/>
+  <!-- Connecting lines hint -->
+  <line x1="60" y1="14" x2="72" y2="24" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+  <line x1="72" y1="24" x2="60" y2="38" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+  <line x1="60" y1="38" x2="48" y2="24" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+  <line x1="48" y1="24" x2="60" y2="14" stroke="#c9a84c" stroke-width="0.5" opacity="0.4"/>
+  <!-- ACT text large -->
+  <text x="60" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#c9a84c" letter-spacing="3">ACT</text>
+  <!-- Underline -->
+  <line x1="22" y1="80" x2="98" y2="80" stroke="#c9a84c" stroke-width="1.5"/>
+  <!-- Government subtitle -->
+  <text x="60" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#e8e8e8" letter-spacing="2">GOVERNMENT</text>
+</svg>

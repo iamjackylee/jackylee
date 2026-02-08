@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Camera lens circle -->
+  <circle cx="60" cy="52" r="32" fill="none" stroke="#c9a84c" stroke-width="3"/>
+  <circle cx="60" cy="52" r="24" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+  <circle cx="60" cy="52" r="16" fill="none" stroke="#c9a84c" stroke-width="1"/>
+  <!-- Lens blades hint -->
+  <line x1="60" y1="20" x2="60" y2="28" stroke="#c9a84c" stroke-width="1" opacity="0.6"/>
+  <line x1="60" y1="76" x2="60" y2="84" stroke="#c9a84c" stroke-width="1" opacity="0.6"/>
+  <line x1="28" y1="52" x2="36" y2="52" stroke="#c9a84c" stroke-width="1" opacity="0.6"/>
+  <line x1="84" y1="52" x2="92" y2="52" stroke="#c9a84c" stroke-width="1" opacity="0.6"/>
+  <!-- RPS text -->
+  <text x="60" y="102" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="#c9a84c" letter-spacing="3">RPS</text>
+</svg>
