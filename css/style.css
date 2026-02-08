@@ -1587,21 +1587,18 @@ p {
 }
 
 .testimonial-card__quote {
-  position: relative;
-  padding-left: 2.5rem;
   margin-bottom: var(--spacing-xl);
   flex: 1;
 }
 
 .testimonial-card__mark {
-  position: absolute;
-  top: -0.5rem;
-  left: 0;
+  display: block;
   font-family: var(--font-heading);
-  font-size: 4rem;
+  font-size: 3rem;
   line-height: 1;
   color: var(--color-accent);
-  opacity: 0.35;
+  opacity: 0.4;
+  margin-bottom: var(--spacing-md);
   pointer-events: none;
   user-select: none;
 }
