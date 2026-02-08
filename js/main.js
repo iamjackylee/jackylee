@@ -208,8 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndices = [0, 1, 2, 3];
     let nextToReplace = 0;
     let nextTestimonialIdx = 4;
-    let carouselInterval = null;
-    let startDelayTimer = null;
+    let nextFlipTimer = null;
     let carouselVisible = false;
 
     // Populate a flip container's card with a specific testimonial (syncs ALL fields)
@@ -224,7 +223,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Typewriter — always runs to completion, never interrupted
-    const typewriteQuote = (quoteEl, text) => {
+    // Optional onComplete callback fires when typing finishes
+    const typewriteQuote = (quoteEl, text, onComplete) => {
       quoteEl.textContent = '';
       quoteEl.classList.remove('typewriter--done');
       quoteEl.classList.add('typewriter--active');
@@ -249,6 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           quoteEl.classList.remove('typewriter--active');
           quoteEl.classList.add('typewriter--done');
+          if (onComplete) onComplete();
         }
       };
       type();
@@ -269,18 +270,33 @@ document.addEventListener('DOMContentLoaded', () => {
     let hasPlayedInitial = false;
 
     // Type in all 4 visible cards with stagger on first view
+    // The last card's typewriter triggers the rotation chain after 2s
     const playInitialTypewriter = () => {
       if (hasPlayedInitial) return;
       hasPlayedInitial = true;
       slots.forEach((flipContainer, idx) => {
         const quoteEl = flipContainer.querySelector('.testimonial-card__quote');
         const text = allTestimonials[currentIndices[idx]].quote;
-        setTimeout(() => typewriteQuote(quoteEl, text), idx * 600);
+        const isLast = idx === slots.length - 1;
+        setTimeout(() => {
+          typewriteQuote(quoteEl, text, isLast ? scheduleNextFlip : null);
+        }, idx * 600);
       });
     };
 
+    // Schedule the next flip after a 2s pause
+    const scheduleNextFlip = () => {
+      if (nextFlipTimer) clearTimeout(nextFlipTimer);
+      if (!carouselVisible) return;
+      nextFlipTimer = setTimeout(rotateNextCard, 2000);
+    };
+
     // Rotate one card at a time with 3D flip
+    // After typing completes on the new card, schedules the next flip
     const rotateNextCard = () => {
+      nextFlipTimer = null;
+      if (!carouselVisible) return;
+
       const flipContainer = slots[nextToReplace];
       const testimonial = allTestimonials[nextTestimonialIdx];
 
@@ -299,9 +315,9 @@ document.addEventListener('DOMContentLoaded', () => {
         flipContainer.classList.add('testimonial-flip--flip-in');
 
         setTimeout(() => {
-          // Cleanup and start typewriter
+          // Cleanup and start typewriter; chain next flip on completion
           flipContainer.classList.remove('testimonial-flip--flip-in');
-          typewriteQuote(quoteEl, testimonial.quote);
+          typewriteQuote(quoteEl, testimonial.quote, scheduleNextFlip);
         }, 350);
 
         currentIndices[nextToReplace] = nextTestimonialIdx;
@@ -321,37 +337,26 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    // Start the rotation interval
-    const startCarousel = () => {
-      startDelayTimer = null;
-      if (!carouselVisible || carouselInterval) return;
-      carouselInterval = setInterval(rotateNextCard, 6000);
-    };
-
-    // Pause only the rotation interval (typewriters keep running)
+    // Pause: cancel any pending flip (typewriters keep running to completion)
     const pauseCarousel = () => {
-      if (startDelayTimer) {
-        clearTimeout(startDelayTimer);
-        startDelayTimer = null;
-      }
-      if (carouselInterval) {
-        clearInterval(carouselInterval);
-        carouselInterval = null;
+      if (nextFlipTimer) {
+        clearTimeout(nextFlipTimer);
+        nextFlipTimer = null;
       }
     };
 
-    // Observe visibility: only controls the rotation interval
+    // Observe visibility: controls rotation chain
     const carouselObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           carouselVisible = true;
-          if (startDelayTimer) clearTimeout(startDelayTimer);
 
           if (!hasPlayedInitial) {
+            // First view: type all 4 cards, last one chains into rotation
             playInitialTypewriter();
-            startDelayTimer = setTimeout(startCarousel, 8000);
-          } else {
-            startDelayTimer = setTimeout(startCarousel, 3000);
+          } else if (!nextFlipTimer) {
+            // Returning to view: resume the chain with a 2s delay
+            scheduleNextFlip();
           }
         } else {
           carouselVisible = false;
