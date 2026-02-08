@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <circle cx="40" cy="40" r="40" fill="#1a1a2e"/>
+  <circle cx="40" cy="40" r="38" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+  <!-- Person silhouette (female) -->
+  <circle cx="40" cy="27" r="11" fill="#c9a84c" opacity="0.85"/>
+  <path d="M20 62 Q20 44 40 44 Q60 44 60 62" fill="#c9a84c" opacity="0.85"/>
+  <!-- Hair detail -->
+  <path d="M29 24 Q30 14 40 13 Q50 14 51 24" fill="#c9a84c" opacity="0.6" stroke="#c9a84c" stroke-width="0.5"/>
+</svg>
