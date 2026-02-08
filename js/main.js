@@ -209,8 +209,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let nextToReplace = 0;
     let nextTestimonialIdx = 4;
     let carouselInterval = null;
+    let startDelayTimer = null;
     let carouselVisible = false;
-    let activeTypewriters = []; // track active typewriter timers
+    let typewriterAbort = false; // flag to stop all active typewriters
 
     // Populate a card slot with a specific testimonial (syncs ALL fields)
     const populateSlot = (slot, testimonial) => {
@@ -222,13 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
       avatar.alt = testimonial.name;
     };
 
-    // Cancel all running typewriter animations
-    const cancelTypewriters = () => {
-      activeTypewriters.forEach(id => clearTimeout(id));
-      activeTypewriters = [];
-    };
-
-    // Typewriter function with cancellable timer tracking
+    // Typewriter — checks abort flag each character, stops cleanly
     const typewriteQuote = (quoteEl, text) => {
       quoteEl.textContent = '';
       quoteEl.classList.remove('typewriter--done');
@@ -236,10 +231,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let i = 0;
       const speed = 20;
+      const runId = Symbol(); // unique ID for this typewriter run
+      quoteEl._twRun = runId;
 
       const type = () => {
-        if (!carouselVisible) {
-          // Section scrolled away — show full text immediately and stop
+        // Stop if aborted OR if a newer typewriter started on this element
+        if (typewriterAbort || quoteEl._twRun !== runId) {
           quoteEl.textContent = text;
           quoteEl.classList.remove('typewriter--active');
           quoteEl.classList.add('typewriter--done');
@@ -248,8 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (i < text.length) {
           quoteEl.textContent += text.charAt(i);
           i++;
-          const timerId = setTimeout(type, speed);
-          activeTypewriters.push(timerId);
+          setTimeout(type, speed);
         } else {
           quoteEl.classList.remove('typewriter--active');
           quoteEl.classList.add('typewriter--done');
@@ -271,7 +267,16 @@ document.addEventListener('DOMContentLoaded', () => {
       // Fade out entire card
       slot.classList.add('testimonial-card--fading-out');
 
-      const fadeTimer = setTimeout(() => {
+      setTimeout(() => {
+        if (!carouselVisible) {
+          // Scrolled away during fade — just set content and clean up
+          populateSlot(slot, testimonial);
+          slot.classList.remove('testimonial-card--fading-out', 'testimonial-card--fading-in');
+          currentIndices[nextToReplace] = nextTestimonialIdx;
+          advanceIndices();
+          return;
+        }
+
         // Update ALL content while card is invisible
         populateSlot(slot, testimonial);
         const quoteEl = slot.querySelector('.testimonial-card__quote');
@@ -285,49 +290,55 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
             slot.classList.remove('testimonial-card--fading-in');
-            // Typewriter the quote after card is visible
             typewriteQuote(quoteEl, testimonial.quote);
           });
         });
 
-        // Advance indices
         currentIndices[nextToReplace] = nextTestimonialIdx;
-        nextToReplace = (nextToReplace + 1) % 4;
-        nextTestimonialIdx = (nextTestimonialIdx + 1) % allTestimonials.length;
-
-        // Skip already-visible testimonials
-        let safetyCount = 0;
-        while (currentIndices.includes(nextTestimonialIdx) && safetyCount < allTestimonials.length) {
-          nextTestimonialIdx = (nextTestimonialIdx + 1) % allTestimonials.length;
-          safetyCount++;
-        }
+        advanceIndices();
       }, 600);
-      activeTypewriters.push(fadeTimer);
+    };
+
+    // Advance to next slot and testimonial index
+    const advanceIndices = () => {
+      nextToReplace = (nextToReplace + 1) % 4;
+      nextTestimonialIdx = (nextTestimonialIdx + 1) % allTestimonials.length;
+
+      let safetyCount = 0;
+      while (currentIndices.includes(nextTestimonialIdx) && safetyCount < allTestimonials.length) {
+        nextTestimonialIdx = (nextTestimonialIdx + 1) % allTestimonials.length;
+        safetyCount++;
+      }
     };
 
     // Start the rotation interval
     const startCarousel = () => {
-      if (carouselInterval) return;
+      startDelayTimer = null;
+      if (!carouselVisible || carouselInterval) return;
       carouselInterval = setInterval(rotateNextCard, 6000);
     };
 
     // Pause the rotation and finish any in-progress typewriters instantly
     const pauseCarousel = () => {
+      // Cancel pending start delay
+      if (startDelayTimer) {
+        clearTimeout(startDelayTimer);
+        startDelayTimer = null;
+      }
+      // Stop interval
       if (carouselInterval) {
         clearInterval(carouselInterval);
         carouselInterval = null;
       }
-      cancelTypewriters();
+      // Signal all active typewriters to stop and show full text
+      typewriterAbort = true;
       // Show full text for any partially typed quotes
       slots.forEach((slot, idx) => {
         const quoteEl = slot.querySelector('.testimonial-card__quote');
         const testimonial = allTestimonials[currentIndices[idx]];
-        if (quoteEl.classList.contains('typewriter--active')) {
-          quoteEl.textContent = testimonial.quote;
-          quoteEl.classList.remove('typewriter--active');
-          quoteEl.classList.add('typewriter--done');
-        }
-        // Clear any fading classes
+        quoteEl.textContent = testimonial.quote;
+        quoteEl.classList.remove('typewriter--active');
+        quoteEl.classList.add('typewriter--done');
         slot.classList.remove('testimonial-card--fading-out', 'testimonial-card--fading-in');
       });
     };
@@ -337,8 +348,10 @@ document.addEventListener('DOMContentLoaded', () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           carouselVisible = true;
-          // Small delay before starting to let user see current cards
-          setTimeout(startCarousel, 3000);
+          typewriterAbort = false;
+          // Cancel any stale start timer before queuing a new one
+          if (startDelayTimer) clearTimeout(startDelayTimer);
+          startDelayTimer = setTimeout(startCarousel, 3000);
         } else {
           carouselVisible = false;
           pauseCarousel();
