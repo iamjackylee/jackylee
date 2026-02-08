@@ -254,8 +254,35 @@ document.addEventListener('DOMContentLoaded', () => {
       type();
     };
 
-    // Ensure initial HTML matches the JS data exactly
-    slots.forEach((slot, idx) => populateSlot(slot, allTestimonials[idx]));
+    // Set initial author/avatar data (but leave quotes empty for typewriter)
+    slots.forEach((slot, idx) => {
+      const t = allTestimonials[idx];
+      slot.querySelector('.testimonial-card__name').textContent = t.name;
+      slot.querySelector('.testimonial-card__role').textContent = t.role;
+      const avatar = slot.querySelector('.testimonial-card__avatar');
+      avatar.src = t.avatar;
+      avatar.alt = t.name;
+      // Clear quote text — will be typed in when section becomes visible
+      slot.querySelector('.testimonial-card__quote').textContent = '';
+    });
+
+    let hasPlayedInitial = false;
+
+    // Type in all 4 visible cards with stagger on first view
+    const playInitialTypewriter = () => {
+      if (hasPlayedInitial) return;
+      hasPlayedInitial = true;
+      slots.forEach((slot, idx) => {
+        const quoteEl = slot.querySelector('.testimonial-card__quote');
+        const text = allTestimonials[currentIndices[idx]].quote;
+        // Stagger each card by 600ms
+        setTimeout(() => {
+          if (!typewriterAbort) {
+            typewriteQuote(quoteEl, text);
+          }
+        }, idx * 600);
+      });
+    };
 
     // Rotate one card at a time
     const rotateNextCard = () => {
@@ -332,15 +359,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       // Signal all active typewriters to stop and show full text
       typewriterAbort = true;
-      // Show full text for any partially typed quotes
+      // Show full text for all quotes and clean up states
       slots.forEach((slot, idx) => {
         const quoteEl = slot.querySelector('.testimonial-card__quote');
         const testimonial = allTestimonials[currentIndices[idx]];
+        // Always set full text (handles partially typed or empty quotes)
         quoteEl.textContent = testimonial.quote;
         quoteEl.classList.remove('typewriter--active');
         quoteEl.classList.add('typewriter--done');
         slot.classList.remove('testimonial-card--fading-out', 'testimonial-card--fading-in');
       });
+      // Mark initial as played since we've shown the full text
+      hasPlayedInitial = true;
     };
 
     // Observe visibility: pause when hidden, resume when visible
@@ -349,9 +379,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (entry.isIntersecting) {
           carouselVisible = true;
           typewriterAbort = false;
-          // Cancel any stale start timer before queuing a new one
           if (startDelayTimer) clearTimeout(startDelayTimer);
-          startDelayTimer = setTimeout(startCarousel, 3000);
+
+          if (!hasPlayedInitial) {
+            // First time: type in the initial 4 cards, then start rotation
+            playInitialTypewriter();
+            // Start rotation after initial typing (~8s for longest quote)
+            startDelayTimer = setTimeout(startCarousel, 8000);
+          } else {
+            // Returning: just resume rotation after short pause
+            startDelayTimer = setTimeout(startCarousel, 3000);
+          }
         } else {
           carouselVisible = false;
           pauseCarousel();
